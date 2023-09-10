@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array.forEach()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array.forEach().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array.forEach()</h1>
+        <p class="header__description">
+          The forEach() method of Array instances executes a provided function
+          once for each array element.
+        </p>
+      </div>
+      <div class="content">
+        <pre><code class="language-js">let fruits = ["apple", "orange", "banana", "mango", "lemon"];</code></pre>
+        <button id="buttonFruits">display fruits</button>
+        <label id="labelFruits"></label>
+        <pre><code class="language-js">
+buttonFruits.onclick = function () {
+  fruits.forEach(displayFruits);
+};
+
+function displayFruits(fruit) {
+  document.getElementById("labelFruits").innerHTML += " " + fruit;
+}
+        </code></pre>
+      </div>
+    </main>
+    <div id="code">
+      <!-- <pre><code class="language-js"></code></pre> -->
+    </div>
+    <script src="array.forEach().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

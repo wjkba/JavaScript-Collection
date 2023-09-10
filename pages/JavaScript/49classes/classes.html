@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classes</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="classes.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>classes</h1>
+        <p class="header__description">
+          Classes in JavaScript are
+          <b
+            >a blueprint for creating objects with shared properties and
+            behaviors.</b
+          >
+          They encapsulate data and methods within a single construct, allowing
+          you to create multiple instances of objects with consistent properties
+          and behaviors.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Player {
+  score = 0;
+
+  pause() {
+    console.log(`You paused the game`);
+  }
+  exit() {
+    console.log(`You exited the game`);
+  }
+}
+
+const player1 = new Player();
+const player2 = new Player();
+
+player1.score += 1;
+player2.score += 3;
+
+player1.exit();
+
+      </code></pre>
+    </div>
+    <script src="classes.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array-sort-numbers</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array-sort-numbers.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array-sort-numbers</h1>
+        <p class="header__description"></p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <!-- <pre><code class="language-js"></code></pre> -->
+      <pre><code class="language-js">
+let grades = [20, 50, 70, 90, 40, 60, 30, 100, 14];
+grades = grades.sort(ascendingSort);
+grades.forEach(print);
+
+function ascendingSort(x, y) {
+  return x - y;
+}
+
+function print(element) {
+  console.log(element);
+}
+
+
+      </code></pre>
+    </div>
+    <script src="array-sort-numbers.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>constructors</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="constructors.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>constructors</h1>
+        <p class="header__description">
+          A constructor is a special method within a class that is automatically
+          called when a new instance of the class is created. It initializes the
+          properties and behaviors of the object being instantiated.
+          <b
+            >Constructors allow you to set initial values for object properties,
+            perform setup tasks, and prepare the object for use.</b
+          >
+          They help ensure that newly created instances have the desired state
+          and behavior right from the start.
+        </p>
+      </div>
+      <div class="content">
+        <button id="button1">Display student1 info</button>
+        <button id="button2">Display student2 info</button>
+        <p id="p1"></p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Student {
+  //use constructor to assign some properties to new student
+  constructor(name, surname, age) {
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+  }
+}
+
+const student1 = new Student("John", "Kowalski", 22);
+const student2 = new Student("Jan", "Brzechwa", 76);
+      </code></pre>
+    </div>
+    <script src="constructors.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

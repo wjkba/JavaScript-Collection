@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callbacks</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="callbacks.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>callbacks</h1>
+        <p class="header__description">
+          Callbacks in JavaScript refer to functions that are passed as
+          arguments to other functions. These functions are executed at a later
+          point in time, often in response to some event or after a certain
+          asynchronous operation completes.
+        </p>
+      </div>
+      <div class="content">
+        <p>5+3=</p>
+        <p id="p1">empty</p>
+      </div>
+    </main>
+    <div id="code">
+      <p>myFunction is an argument in other function (callback)</p>
+      <pre><code class="language-js">
+sum(5, 3, displayDOM);
+
+function sum(x, y, myFunction) {
+  let result = x + y;
+  myFunction(result);
+}
+
+function displayConsole(output) {
+  console.log(output);
+}
+function displayDOM(output) {
+  document.getElementById("p1").innerHTML = output;
+}
+
+      </code></pre>
+    </div>
+    <script src="callbacks.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

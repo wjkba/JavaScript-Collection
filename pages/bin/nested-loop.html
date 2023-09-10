@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nested-loop</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="nested-loop.css" />
+  </head>
+  <body>
+    <h1>nested-loop</h1>
+    <main>
+      <div class="grid">
+        <div>
+          <label>Select a symbol to use: </label>
+          <input id="inputSymbol" />
+        </div>
+        <div>
+          <label>Enter number of rows: </label>
+          <input id="inputRows" />
+        </div>
+        <div>
+          <label>Enter number of columns: </label> <input id="inputColumns" />
+        </div>
+      </div>
+      <button id="buttonSubmit">submit</button><br />
+      <label id="rectangle"></label>
+    </main>
+    <pre><code class="language-js">
+const p1 = document.getElementById("p1");
+const inputRows = document.getElementById("inputRows");
+const inputColumns = document.getElementById("inputColumns");
+const rectangle = document.getElementById("rectangle");
+const buttonSubmit = document.getElementById("buttonSubmit");
+const inputSymbol = document.getElementById("inputSymbol");
+
+buttonSubmit.onclick = function () {
+  rectangle.innerHTML = "";
+  for (let i = 1; i <= inputRows.value; i += 1) {
+    for (let j = 1; j <= inputColumns.value; j += 1) {
+      rectangle.innerHTML += inputSymbol.value;
+    }
+    rectangle.innerHTML += "<br>";
+  }
+};
+
+    </code></pre>
+
+    <script src="nested-loop.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

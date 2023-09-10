@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string-slicing</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="string-slicing.css" />
+  </head>
+  <body>
+    <h1>string-slicing</h1>
+    <main>
+      <div class="container1">
+        <p id="p_name">John Kowalski</p>
+        <p id="p_num">0 1 2 3 4 5 6 7 8 9 10 11 12 13</p>
+      </div>
+      <h2>manual slicing</h2>
+      <div name=".slice" class="flex">
+        <pre><code class="language-js">fullName.slice(0, 5)</code></pre>
+        <span id="span1"></span>
+      </div>
+      <div name=".slice" class="flex">
+        <pre><code class="language-js">fullName.slice(5,13)</code></pre>
+        <span id="span2"></span>
+      </div>
+      <div name=".slice" class="flex">
+        <pre><code class="language-js">fullName.slice(5)</code></pre>
+        <span id="span3"></span>
+      </div>
+      <h2 id="h22">automatic slicing by detecting spaces</h2>
+      <div name=".slice" class="flex">
+        <pre><code class="language-js">fullName.slice(0, fullName.indexOf(" "))</code></pre>
+        <span id="span4"></span>
+      </div>
+      <div name=".slice" class="flex">
+        <pre><code class="language-js">fullName.slice(fullName.indexOf(" ") + 1)</code></pre>
+        <span id="span5"></span>
+      </div>
+    </main>
+    <pre id="code"><code class="language-js" id="code">
+let fullName = "John Kowalski";
+let firstName;
+let lastName;
+
+//manual
+firstName = fullName.slice(0, 5);
+document.getElementById("span1").innerHTML = firstName;
+lastName = fullName.slice(5, 13);
+document.getElementById("span2").innerHTML = lastName;
+document.getElementById("span3").innerHTML = fullName.slice(5);
+
+//detect spaces
+firstName = fullName.slice(0, fullName.indexOf(" "));
+document.getElementById("span4").innerHTML = firstName;
+lastName = fullName.slice(fullName.indexOf(" ") + 1);
+document.getElementById("span5").innerHTML = lastName;
+
+    </code></pre>
+    <script src="string-slicing.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

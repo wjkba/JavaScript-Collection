@@ -1,0 +1,57 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --myVariable: value;
+  --text: #000000;
+  --background: #fafaf9;
+  --primary: #ffec9e;
+  --secondary: #e6e6e6;
+}
+/* ----------------- */
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2.5rem;
+}
+.header__description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  max-width: 40rem;
+  text-align: justify;
+}
+.content {
+  font-size: 1.1rem;
+}
+.container-input {
+  font-size: 1.4rem;
+  color: white;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  max-width: 24rem;
+}
+.container-input input {
+  color: #d66fd3;
+  background-color: #1e1e1e;
+  border: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+#inputX {
+  width: 1.7rem;
+}
+#inputY {
+  width: 3.3rem;
+}
+#inputItem {
+  color: #93db71;
+  width: 2.5rem;
+}
+#code {
+  margin-top: 3rem;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spread-operator</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="spread-operator.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>spread-operator</h1>
+        <p class="header__description">
+          allows an iterable such as an array or string to be expanded in places
+          where zero or more arguments are expected
+        </p>
+        <p>(<b>unpacks the elements</b>)</p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <p>maximum return NaN because it is contained in an array</p>
+      <pre><code class="language-js">
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let maximum = Math.max(numbers);
+console.log(maximum); // NaN
+
+      </code></pre>
+      <p>spread operator unpacks array elements into individual arguments,</p>
+      <p>so it can be used with Math.max()</p>
+      <p>maximum returns 9 because 9 is the biggest element in array</p>
+      <pre><code class="language-js">
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let maximum = Math.max(...numbers);
+console.log(maximum);
+
+      </code></pre>
+      <p>
+        by using the spread operator (...) it is possible to extract items from
+        itemSet2 and add them to itemSet1 in one line of code
+      </p>
+      <pre><code class="language-js">
+let itemSet1 = ["apple", "orange", "banana", "mango", "lemon"];
+let itemSet2 = ["tomato", "potato", "onion"];
+itemSet1.push(...itemSet2);
+console.log(itemSet1); //(8) 0: "apple 1: "orange" 2: "banana" 3: "mango" 4: "lemon" 5: "tomato" 6: "potato" 7: "onion"
+console.log(...itemSet1); // apple orange banana mango lemon tomato potato onion
+      </code></pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+    </div>
+    <script src="spread-operator.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array.reduce()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array.reduce().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array.reduce()</h1>
+        <p class="header__description">
+          The reduce() method of Array instances executes a user-supplied
+          "reducer" callback function on each element of the array, in order,
+          passing in the return value from the calculation on the preceding
+          element. The final result of running the reducer across all elements
+          of the array is a single value.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <!-- <pre><code class="language-js"></code></pre> -->
+      <pre><code class="language-js">
+let arrayPrices = [5, 10, 15, 20, 25, 30];
+let total = arrayPrices.reduce(checkOut);
+
+console.log(`The total is ${total}PLN`);
+
+function checkOut(total, element) {
+  return total + element;
+}
+
+      </code></pre>
+    </div>
+    <script src="array.reduce().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

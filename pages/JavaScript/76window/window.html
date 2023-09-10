@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="window.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>window</h1>
+        <p class="header__description">
+          window object represents the global window or browser environment in
+          which your code is running. It serves as the top-level object, and
+          many global properties, functions, and methods are attached to it.
+          window provides access to various browser-related features and allows
+          you to interact with the browser, manipulate the webpage's content,
+          handle events, and more. It's a fundamental part of client-side web
+          development and is used to control and manage the browser window and
+          its interactions with the web page.
+        </p>
+      </div>
+      <div class="content">
+        <p>
+          <b>window.document:</b> Provides access to the Document object,
+          allowing you to manipulate the content and structure of the current
+          webpage.
+        </p>
+        <p>
+          <b>window.location:</b> Contains information about the current URL,
+          including the protocol, hostname, pathname, and more.
+        </p>
+        <p>
+          <b>window.navigator:</b> Gives information about the user's browser,
+          such as its name, version, and capabilities.
+        </p>
+        <p>
+          <b>window.localStorage</b> and <b>window.sessionStorage</b>: Provide
+          access to the Web Storage API for storing key-value pairs persistently
+          (localStorage) or for the duration of a page session (sessionStorage).
+        </p>
+        <p>
+          <b>window.console</b>: Gives access to the browser console for logging
+          messages and debugging.
+        </p>
+        <p>
+          <b>window.alert()</b>, <b>window.confirm()</b>, and
+          <b>window.prompt()</b>: Display dialog boxes for user interaction.
+        </p>
+        <p>
+          <b>window.innerWidth</b> and <b>window.innerHeight</b>: Provide the
+          dimensions of the browser's viewport, allowing you to create
+          responsive designs.
+        </p>
+        <p>
+          <b>window.screen</b>: Contains information about the user's screen,
+          such as width, height, and pixel depth.
+        </p>
+        <p>
+          <b>window.history</b>: Allows manipulation of the browser's session
+          history, enabling navigation within the browsing context.
+        </p>
+        <p><b>window.open()</b>: Opens a new browser window or tab.</p>
+        <p><b>window.close()</b>: Closes the current browser window or tab.</p>
+        <p>
+          <b>window.setTimeout()</b> and <b>window.setInterval()</b>: Schedule
+          the execution of functions at specified intervals or after a specific
+          delay.
+        </p>
+        <p>
+          <b>window.onresize</b> and <b>window.onscroll</b>: Event listeners
+          that trigger when the browser window is resized or scrolled.
+        </p>
+        <p>
+          <b>window.onload</b> and <b>window.onunload</b>: Event listeners that
+          trigger when the web page finishes loading or unloads.
+        </p>
+        <p>
+          <b>window.localStorage</b> and <b>window.sessionStorage</b>: Enable
+          data storage on the client side, persisting even after the user closes
+          the browser (localStorage) or for the duration of a page session
+          (sessionStorage).
+        </p>
+      </div>
+    </main>
+    <div id="code"></div>
+    <script src="window.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

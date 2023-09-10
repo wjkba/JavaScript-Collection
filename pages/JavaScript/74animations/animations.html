@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animations</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>simple animations</h1>
+      </div>
+      <div class="content">
+        <div class="flex">
+          <button id="myButton1">begin</button>
+          <div class="green-box" id="divSlide"></div>
+        </div>
+
+        <pre><code class="language-js">
+//slide
+myButton1.addEventListener("click", beginSlide);
+function beginSlide() {
+  let timerId = null;
+  let x = 0;
+  let y = 0;
+
+  timerId = setInterval(frame, 5);
+  function frame() {
+    if (x >= 300) {
+      clearInterval(timerId);
+    } else {
+      x += 1;
+      divSlide.style.left = x + "px";
+    }
+  }
+        </code></pre>
+
+        <div class="flex">
+          <button id="myButton2">begin</button>
+          <div class="green-box" id="divRotate"></div>
+        </div>
+
+        <pre><code class="language-js">
+//rotate
+myButton2.addEventListener("click", beginRotate);
+function beginRotate() {
+  let timerId = null;
+  let degrees = 0;
+  timerId = setInterval(frame, 5);
+  function frame() {
+    if (degrees >= 360) {
+      clearInterval(timerId);
+    } else {
+      degrees += 1;
+      divRotate.style.transform = `rotateZ(${degrees}deg)`;
+    }
+  }
+}
+        </code></pre>
+
+        <div class="flex">
+          <button id="myButton3">begin</button>
+          <div class="green-box" id="divSkew"></div>
+        </div>
+        <pre><code class="language-js">
+//skew
+myButton3.addEventListener("click", beginSkew);
+function beginSkew() {
+  let timerId = null;
+  let deg1 = 0;
+  timerId = setInterval(frame, 5);
+  function frame() {
+    if (deg1 >= 30) {
+      clearInterval(timerId);
+    } else {
+      deg1 += 1;
+      divSkew.style.transform = `skew(${deg1}deg)`;
+    }
+  }
+}
+        </code></pre>
+
+        <div class="flex">
+          <button id="myButton4">begin</button>
+          <div class="green-box" id="divScale"></div>
+        </div>
+
+        <pre><code class="language-js">
+//scale
+myButton4.addEventListener("click", beginScale);
+function beginScale() {
+  let x = 1;
+  let y = 1;
+  let timerId = null;
+  timerId = setInterval(frame, 100);
+  function frame() {
+    if (x <= 0.5 || y <= 0.5) {
+      clearInterval(timerId);
+    } else {
+      x -= 0.05;
+      y -= 0.05;
+      divScale.style.transform = `scale(${x}, ${y})`;
+    }
+  }
+}
+        </code></pre>
+      </div>
+    </main>
+    <script src="animations.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

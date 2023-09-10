@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>return-statement</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="return-statement.css" />
+  </head>
+  <body>
+    <h1>return-statement</h1>
+    <main>
+      <div>
+        <h2>Rectangle area, pole</h2>
+        <img
+          id="imgRectangle"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Rectangle_%28plain%29.svg/400px-Rectangle_%28plain%29.svg.png"
+        />
+        <div class="bFlex">
+          <div id="bFlex1">
+            <label>Width: </label>
+            <label>Height: </label>
+          </div>
+          <div id="bFlex2">
+            <input id="inputWidth" />
+            <input id="inputHeight" />
+          </div>
+        </div>
+        <button id="buttonSubmit">Submit</button>
+
+        <p id="p1"></p>
+      </div>
+    </main>
+    <pre><code class="language-js">
+let area;
+let width;
+let height;
+const inputWidth = document.getElementById("inputWidth");
+const inputHeight = document.getElementById("inputHeight");
+const buttonSubmit = document.getElementById("buttonSubmit");
+const p1 = document.getElementById("p1");
+
+buttonSubmit.addEventListener("click", function () {
+  width = inputWidth.value;
+  height = inputHeight.value;
+  area = getArea(width, height);
+  p1.innerHTML = "<span>Area/Pole:</span> " + width + "x" + height + "=" + area;
+});
+
+function getArea(width, height) {
+  return width * height;
+}
+    </code></pre>
+    <script src="return-statement.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

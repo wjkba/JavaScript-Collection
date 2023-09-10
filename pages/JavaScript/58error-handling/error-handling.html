@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>error-handling</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="error-handling.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>error-handling</h1>
+        <p class="header__description">
+          error = object with description of something went wrong
+        </p>
+        <p>- Can't open a file</p>
+        <p>- Lose connection</p>
+        <p>- User types incorrect input</p>
+        <p>- TypeError</p>
+      </div>
+      <div class="content">
+        <input type="text" id="inputUser" />
+        <button id="buttonSubmit">Submit</button>
+        <p id="p1">empty</p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+try {
+  let x = window.prompt("Enter a number");
+  x = Number(x);
+  if (isNaN(x)) throw "That wasn't a number";
+  if (x == "") throw "That was empty";
+  console.log(`${x} is a number`);
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log("This always executes");
+}
+
+      </code></pre>
+      <pre><code class="language-js">
+const inputUser = document.getElementById("inputUser");
+const buttonSubmit = document.getElementById("buttonSubmit");
+const p1 = document.getElementById("p1");
+let input;
+
+buttonSubmit.onclick = function () {
+  try {
+    input = Number(inputUser.value);
+    if (isNaN(input)) {
+      p1.innerHTML = "This is not a number";
+      turnRed(p1);
+    }
+    if (input == "") {
+      p1.innerHTML = "This is empty";
+      turnRed(p1);
+    }
+    if (input > 0) {
+      p1.innerHTML = "OK";
+      turnGreen(p1);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+function turnRed(element) {
+  element.style.backgroundColor = "red";
+}
+function turnGreen(element) {
+  element.style.backgroundColor = "green";
+}
+      </code></pre>
+    </div>
+    <script src="error-handling.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

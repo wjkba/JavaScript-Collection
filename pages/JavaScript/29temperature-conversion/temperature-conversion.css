@@ -1,0 +1,53 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --myVariable: value;
+  --text: #000000;
+  --background: #fafaf9;
+  --primary: #ffec9e;
+  --secondary: #e6e6e6;
+}
+/* ----------------- */
+
+body {
+  margin: 0;
+  padding: 2rem;
+}
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+.content {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1.3rem;
+}
+.content #labelTemp {
+  visibility: hidden;
+}
+.content #inputTemp {
+  width: 3rem;
+  font-size: 1.3rem;
+}
+.content #buttonSubmit {
+  height: 2rem;
+  width: 10rem;
+  margin-top: 0.5rem;
+}
+.content .celsius,
+.fahrenheit {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.content #radioCelsius,
+#radioFahrenheit {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+#p1 {
+  font-size: 1.5rem;
+}
+#code {
+  margin-top: 6rem;
+}

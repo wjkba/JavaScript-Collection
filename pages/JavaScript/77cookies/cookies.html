@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cookies</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="cookies.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>cookies</h1>
+        <p class="header__description">
+          Cookies are small pieces of data that can be stored in a user's web
+          browser. They are often used to persist information between sessions
+          or across different web pages on a website. Cookies are commonly used
+          for tasks like tracking user sessions, storing user preferences, and
+          remembering login credentials. JavaScript provides a way to create,
+          read, and modify cookies, making them a valuable tool for managing
+          user data and enhancing the user experience in web applications.
+        </p>
+      </div>
+      <div class="content">
+        <div>
+          <label>firstName</label>
+          <input type="text" id="inputFirstName" />
+        </div>
+        <div>
+          <label>lastName</label>
+          <input type="text" id="inputLastName" />
+        </div>
+        <button id="buttonSubmit">submit</button><br />
+        <button id="buttonGetCookies">get cookies</button><br />
+        <button id="buttonDelCookies">delete cookies</button>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+document.cookie = "firstName=John; path=/; SameSite=Strict";
+document.cookie = "lastName=Kowalski; path=/;  SameSite=Strict";
+console.log(document.cookie);
+      </code></pre>
+      <pre><code class="language-js">
+setCoookie("firstName", "John", 365);
+setCoookie("lastName", "Kowalski", 365);
+
+console.log(getCookie("firstName"));
+console.log(getCookie("lastName"));
+
+function setCoookie(name, value, expire) {
+  const date = new Date();
+  date.setTime(date.getTime() + expire * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value}; ${expires}; path:/; SameSite=Strict;`;
+}
+
+function deleteCookie(name) {
+  setCoookie(name, null, null);
+}
+
+function getCookie(name) {
+  const cDecoded = decodeURIComponent(document.cookie);
+  const cArray = cDecoded.split("; ");
+
+  cArray.forEach((element) => {
+    if (element.indexOf(name) == 0) {
+      result = element.substring(name.length + 1);
+    }
+  });
+  return result;
+}
+
+      </code></pre>
+      <p>current page:</p>
+      <pre><code class="language-js">
+const inputFirstName = document.getElementById("inputFirstName");
+const inputLastName = document.getElementById("inputLastName");
+const buttonSubmit = document.getElementById("buttonSubmit");
+const buttonGetCookies = document.getElementById("buttonGetCookies");
+
+buttonSubmit.addEventListener("click", () => {
+  setCookie("firstName", inputFirstName.value, 365);
+  setCookie("lastName", inputLastName.value, 365);
+  console.log(getCookie("firstName"));
+  console.log(getCookie("lastName"));
+  console.log(document.cookie);
+});
+buttonGetCookies.addEventListener("click", () => {
+  inputFirstName.value = getCookie("firstName");
+  inputLastName.value = getCookie("lastName");
+});
+
+function setCookie(name, value, expire) {
+  const date = new Date();
+  date.setTime(date.getTime() + expire * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value}; ${expires}; path:/; SameSite=Strict;`;
+}
+
+function deleteCookie(name) {
+  document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+function getCookie(name) {
+  const cDecoded = decodeURIComponent(document.cookie);
+  const cArray = cDecoded.split("; ");
+
+  cArray.forEach((element) => {
+    if (element.indexOf(name) == 0) {
+      result = element.substring(name.length + 1);
+    }
+  });
+  return result;
+}
+
+      </code></pre>
+    </div>
+    <script src="cookies.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+  padding: 2rem;
+}
+#p_count {
+  font-size: 4rem;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.flex button {
+  font-size: 1.5rem;
+  height: 3rem;
+}

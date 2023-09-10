@@ -1,0 +1,11 @@
+body {
+  padding: 2rem;
+}
+header {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 3rem;
+}
+
+#input_radius {
+  width: 5rem;
+}

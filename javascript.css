@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Crimson+Text:wght@700&family=Roboto&display=swap");
+
+body {
+  margin: 0;
+}
+/*    HEADER    */
+.header {
+  padding: 1rem;
+  background-color: #f7e017;
+  max-width: 60rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+.header h1 {
+  font-family: monospace;
+}
+/*    PAGE SECTION    */
+
+main {
+  padding: 1rem;
+  text-align: justify;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: hsl(43, 18%, 92%);
+}
+.description p {
+  font-family: "Roboto", sans-serif;
+}
+.container2 p {
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+}
+.container2 input {
+  border: none;
+  border-bottom: 0.125rem solid rgba(19, 19, 21, 0.6);
+  outline: none;
+  padding-left: 0.875rem;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  width: 98%;
+  min-height: 3rem;
+}
+
+/*       LIST OF PAGES       */
+
+#pages ol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  height: 70rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+#pages ol li {
+  padding: 0.5rem;
+  height: fit-content;
+  /* width: 100%; */
+  cursor: pointer;
+}
+#pages ol li:hover {
+  background-color: #ffeb7f;
+  border-radius: 0.5rem;
+}
+#pages ol li a {
+  display: block;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+/* stuff */
+@media (max-width: 830px) {
+  ol {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+}

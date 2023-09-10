@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array-of-objects</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array-of-objects.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array-of-objects</h1>
+        <p class="header__description">
+          An array of objects is a data structure that holds a collection of
+          objects. Each object within the array can have multiple properties and
+          values. This structure allows you to store and manipulate a group of
+          related objects, making it useful for tasks like managing lists of
+          items in online stores, user data, or any scenario where you need to
+          work with multiple pieces of related information simultaneously.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Item {
+  constructor(name, price, stock) {
+    this.name = name;
+    this.price = price;
+    this.stock = stock;
+  }
+  addCart() {
+    console.log(`${this.name} has been added to your cart.`);
+  }
+}
+const item1 = new Item("Hat", 50, 5);
+const item2 = new Item("Shirt", 50, 99);
+const item3 = new Item("Ring", 50, 1);
+
+const items = [item1, item2, item3];
+
+console.log(items[0]); // returns item1 Object
+console.log(items[0].name); // returns name of item1
+
+items[1].addCart(); // invoke item2.addCart() function
+
+addAll(items);
+
+function addAll(items) {
+  for (const item of items) {
+    item.addCart();
+  }
+}
+
+      </code></pre>
+    </div>
+    <script src="array-of-objects.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

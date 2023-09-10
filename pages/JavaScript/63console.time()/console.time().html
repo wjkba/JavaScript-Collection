@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>console.time()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="console.time().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>console.time()</h1>
+        <p class="header__description">
+          console.time() is a method used for measuring the time it takes to
+          execute a specific portion of your code. It allows you to mark the
+          beginning and end of a code block you want to measure and then
+          calculates the elapsed time between those points.
+        </p>
+      </div>
+      <div class="content">
+        <button id="buttonOpen">Open window</button>
+        <p id="p1"></p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+//start
+console.time("Response time");
+
+alert("Measuring your response time, click the button");
+
+//end
+console.timeEnd("Response time");
+
+      </code></pre>
+      <pre><code class="language-js">
+const buttonOpen = document.getElementById("buttonOpen");
+const p1 = document.getElementById("p1");
+
+buttonOpen.onclick = function () {
+  //start
+  console.time("Response time");
+
+  alert("Measuring your response time, click the button");
+
+  //end
+  console.timeEnd("Response time");
+  p1.innerHTML = "Response time sent to console";
+};
+
+      </code></pre>
+    </div>
+    <script src="console.time().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

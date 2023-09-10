@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="addEventListener().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>addEventListener()</h1>
+        <p class="header__description">
+          <b
+            >addEventListener is a method used to attach event listeners to HTML
+            elements.</b
+          >
+          It allows you to specify which event (e.g., "click," "keydown") you
+          want to listen for and what action to perform when that event occurs.
+          Event listeners are used to create interactivity in web pages,
+          responding to user actions like clicks or key presses.
+          <b
+            >addEventListener is a versatile way to handle events, and it
+            supports attaching multiple event listeners to a single element,
+            making it a fundamental part of web development for creating dynamic
+            and responsive web applications.</b
+          >
+        </p>
+      </div>
+      <div class="content">
+        <div id="outerDiv">
+          <div id="innerDiv"></div>
+        </div>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const outerDiv = document.getElementById("outerDiv");
+const innerDiv = document.getElementById("innerDiv");
+
+//both elements are waiting for click while sharing some space with each other
+outerDiv.addEventListener("click", changeWhite, true); //third argument - 'true' makes outerDiv preffered and it is first to change onclick
+innerDiv.addEventListener("click", changeWhite);
+
+function changeWhite() {
+  alert(`You have changed ${this.id} element to white`);
+  this.style.backgroundColor = "white";
+}
+      </code></pre>
+    </div>
+    <script src="addEventListener().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

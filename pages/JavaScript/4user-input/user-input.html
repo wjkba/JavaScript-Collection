@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user-input</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="user-input.css" />
+  </head>
+  <body>
+    <h1>user-input</h1>
+    <label id="label1">Enter your username: </label>
+    <input type="text" id="input_username" />
+    <button type="button" id="button1">submit</button>
+    <h2 id="username_display"></h2>
+    <pre><code class="language-js">
+  let username;
+
+  document.getElementById("button1").onclick = function () {
+    username = document.getElementById("input_username").value;
+    console.log(username);
+    document.getElementById("username_display").innerHTML = "Hello " + username;
+  };
+    </code></pre>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <script src="user-input.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

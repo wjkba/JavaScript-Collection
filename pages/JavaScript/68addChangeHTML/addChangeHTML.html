@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addChangeHTML</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="addChangeHTML.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>add/change HTML elements</h1>
+        <p class="header__description">
+          Creating new HTML elements involves using the document.createElement()
+          method to generate an HTML element object. You can then customize and
+          manipulate this element, set its attributes and content, and append it
+          to the DOM (Document Object Model) to become part of your webpage.
+          This dynamic creation of HTML elements is commonly used for adding or
+          modifying content on a web page programmatically, allowing you to
+          build interactive and responsive web applications.
+        </p>
+      </div>
+      <div class="content">
+        <pre><code class="language-js">const itemList = document.querySelector(".itemList");</code></pre>
+        <pre><code class="language-js">
+let listItem1 = document.createElement("li");
+listItem1.textContent = "hat";
+listItem1.style.color = "#9e85c4";
+itemList.prepend(listItem1);
+        </code></pre>
+        <h2>itemList:</h2>
+        <ul class="itemList">
+          <li>tshirt</li>
+          <li>jeans</li>
+        </ul>
+        <pre><code class="language-js">
+let listItem2 = document.createElement("li");
+listItem2.textContent = "shoes";
+listItem2.style.color = "#9e85c4";
+itemList.append(listItem2);
+        </code></pre>
+      </div>
+      <pre><code class="language-js">
+const content = document.querySelector(".content");
+const newElement = document.createElement("p");
+newElement.textContent = "new paragraph";
+newElement.style.color = "#c83c4c";
+newElement.style.fontSize = "1.5rem";
+content.append(newElement);
+      </code></pre>
+    </main>
+    <div id="code"></div>
+    <script src="addChangeHTML.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --myVariable: value;
+  --text: #000000;
+  --background: #fafaf9;
+  --primary: #ffec9e;
+  --secondary: #e6e6e6;
+}
+/* ----------------- */
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2.5rem;
+}
+.header__description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  max-width: 40rem;
+  text-align: justify;
+}
+.content {
+  font-size: 1.1rem;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+#rightContainer {
+  width: 15rem;
+}
+#p1 {
+  padding: 1rem;
+  max-width: 15rem;
+}
+#p2 {
+  font-size: 1.2rem;
+}
+button {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+#code {
+  margin-top: 3rem;
+}
+#code p {
+  max-width: 45rem;
+  margin: 0;
+}

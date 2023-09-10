@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>do-while-loops-loops</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="do-while-loops.css" />
+  </head>
+  <body>
+    <h1>while-loops</h1>
+    <div>
+      <button id="buttonWhile">start do-while loop</button>
+      <p id="p1"></p>
+    </div>
+    <pre><code class="language-js">
+// do while loop = do something,
+//                 then check the condition,
+//                 repeat if true
+//
+
+const buttonWhile = document.getElementById("buttonWhile");
+const input01 = document.getElementById("input01");
+
+buttonWhile.onclick = function () {
+  do {
+    userName = window.prompt("input text(e.g username): ");
+  } while (userName == "" || userName == null);
+
+  document.getElementById("p1").innerHTML = "Welcome " + userName;
+};
+    </code></pre>
+    <script src="do-while-loops.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

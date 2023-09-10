@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array-shuffle</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array-shuffle.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array-shuffle</h1>
+        <p class="header__description"></p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+let cards = ["A","1",2","3","4","5","6","7","8","9","10","J","Q","K",];
+
+shuffle(cards);
+
+console.log(cards);
+
+function shuffle(array) {
+  let currentIndex = array.length; 
+  while (currentIndex != 0) { // while there are cards to shuffle
+    let randomIndex = Math.floor(Math.random() * array.length); // choose random card
+    currentIndex -= 1; // each iteration of the loop removes 1 card from the pool
+    let temp = array[currentIndex]; // holds temporary value while swapping elements
+    array[currentIndex] = array[randomIndex]; // swaps current card with random card
+    array[randomIndex] = temp; // value stored in temp is moved to randomIndex
+  }
+  return array; // once the loop is finished this line returns shuffled array
+}
+
+      </code></pre>
+    </div>
+    <script src="array-shuffle.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

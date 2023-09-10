@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="await.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>await</h1>
+        <p class="header__description">
+          The await keyword
+          <b
+            >is used inside an async function to pause the execution of that
+            function until a promise is resolved</b
+          >. It allows you to work with asynchronous code in a more
+          synchronous-like manner, making it easier to manage and reason about
+          asynchronous operations. When await is used, the function will wait
+          for the promise to settle (either resolve or reject) and then continue
+          executing, returning the resolved value or throwing an error if the
+          promise is rejected.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+//await = makes an a sync function wait for a Promise
+
+async function loadFile() {
+  let fileLoaded = true;
+  if (fileLoaded) {
+    return "File loaded";
+  } else {
+    throw "File NOT loaded";
+  }
+}
+
+async function startProcess() {
+  try {
+    let message = await loadFile();
+    console.log(message);
+  } catch {
+    console.log("error");
+  }
+}
+startProcess();
+
+      </code></pre>
+    </div>
+    <script src="await.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

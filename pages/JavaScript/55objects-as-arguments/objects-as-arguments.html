@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objects-as-arguments</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="objects-as-arguments.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>objects-as-arguments</h1>
+        <p class="header__description">
+          In JavaScript, you can pass objects as arguments to functions. This
+          allows you to group related data together and pass it to a function as
+          a single argument, making your code more organized and readable.
+          <b
+            >Inside the function, you can access and manipulate the object's
+            properties as needed.</b
+          >
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Car {
+  constructor(model, year, color) {
+    this.model = model;
+    this.year = year;
+    this.color = color;
+  }
+}
+const car1 = new Car("Fiat", 1973, "red");
+const car2 = new Car("Porsche", 2011, "blue");
+const car3 = new Car("Volkswagen", 2005, "black");
+
+//car2 is an object
+changeColor(car2, "pink");
+displayInfo(car2);
+
+//functions
+function displayInfo(car) {
+  console.log(car.model);
+  console.log(car.year);
+  console.log(car.color);
+}
+function changeColor(car, color) {
+  car.color = color;
+}
+
+      </code></pre>
+    </div>
+    <script src="objects-as-arguments.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

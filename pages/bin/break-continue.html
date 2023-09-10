@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>break-continue</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="break-continue.css" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <pre><code class="language-js">
+for (let i = 1; i <= 20; i += 1) {
+  if (i == 13) {
+    break;
+  }
+    </code></pre>
+        <button class="button" id="button1">start for-loop</button>
+        <pre><code class="language-js">
+for (let i = 1; i <= 20; i += 1) {
+  if (i == 13) {
+    continue;
+  }
+    </code></pre>
+        <button class="button" id="button2">start for-loop</button>
+        <p id="p1"></p>
+      </div>
+    </main>
+    <pre id="code"><code class="language-js">
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+
+button1.onclick = function () {
+  console.clear();
+  console.log("Count 1 to 20 break at 13");
+  for (let i = 1; i <= 20; i += 1) {
+    if (i == 13) {
+      break;
+    }
+    console.log(i);
+  }
+};
+
+button2.onclick = function () {
+  console.clear();
+  console.log("Count 1 to 20 without 13");
+  for (let i = 1; i <= 20; i += 1) {
+    if (i == 13) {
+      continue;
+    }
+    console.log(i);
+  }
+};
+
+    </code></pre>
+    <script src="break-continue.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  padding: 2rem;
+}
+h1 {
+  font-family: monospace;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 3rem;
+  margin-left: 2rem;
+  text-align: center;
+}
+img {
+  max-height: 10rem;
+}
+h2 {
+  margin-top: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.flex {
+  display: flex;
+}
+button {
+  margin-left: 2.5rem;
+  width: 4rem;
+  height: 2rem;
+}

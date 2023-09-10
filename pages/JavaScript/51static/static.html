@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>static</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>static</h1>
+        <p class="header__description">
+          The static keyword is used in a class to define methods and properties
+          that are associated with the class itself, rather than with instances
+          of the class. This means you can call static methods and access static
+          properties on the class itself, without needing to create an instance
+          of the class.
+          <b
+            >Static members are often used for utility functions or properties
+            that are shared among all instances of the class.</b
+          >
+        </p>
+      </div>
+      <div class="content">
+        <p id="p1">
+          Anything that is static belongs to the class, not the objects.
+        </p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Car {
+  static numberOfCars = 0;
+  constructor(model) {
+    this.model = model;
+    Car.numberOfCars += 1;
+  }
+  static startRace() {
+    console.log(`GO!`);
+  }
+}
+
+const car1 = new Car("Fiat");
+const car2 = new Car("Porsche");
+const car3 = new Car("Ferrari");
+
+console.log(Car.numberOfCars);
+console.log(Car.startRace());
+      </code></pre>
+    </div>
+    <script src="static.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

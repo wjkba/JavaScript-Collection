@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if-statements</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="if-statements.css" />
+  </head>
+  <body>
+    <h1>if-statements</h1>
+    <main>
+      <div id="divAge">
+        <label>Enter your age:</label>
+        <input id="inputAge" /><button id="buttonSubmit">Submit</button>
+        <p id="pResult"></p>
+      </div>
+      <div id="divStatus">
+        <label>Online status:</label>
+        <input id="Checkbox" name="checkbox" type="checkbox" />
+        <img
+          id="imgOnline"
+          src="https://www.iconarchive.com/download/i59381/franksouza183/fs/Status-tray-online.ico"
+        />
+      </div>
+      <div class="newParagraph">
+        <p>checking age by using if, else, elseif statements</p>
+      </div>
+    </main>
+    <pre><code class="language-js">
+let age;
+document.getElementById("buttonSubmit").onclick = function () {
+  age = document.getElementById("inputAge").value;
+  age = Number(age);
+  //IF STATEMENT
+  if (age >= 65) {
+    document.getElementById("pResult").innerHTML = "You are a senior.";
+  }
+  //
+  else if (age >= 18) {
+    document.getElementById("pResult").innerHTML = "You are an adult.";
+  }
+  //
+  else if (age <= 0) {
+    document.getElementById("pResult").innerHTML = "age error";
+  }
+  //
+  else {
+    document.getElementById("pResult").innerHTML = "You are under 18.";
+  }
+};
+    </code></pre>
+    <div class="newParagraph">
+      <p>checkbox state with addEventListener</p>
+    </div>
+    <pre><code class="language-js">
+var checkbox = document.querySelector("input[name=checkbox]");
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    document.getElementById("imgOnline").style.visibility = "visible";
+    console.log("Checkbox is checked..");
+  } else {
+    document.getElementById("imgOnline").style.visibility = "hidden";
+    console.log("Checkbox is not checked..");
+  }
+});
+    </code></pre>
+    <script src="if-statements.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

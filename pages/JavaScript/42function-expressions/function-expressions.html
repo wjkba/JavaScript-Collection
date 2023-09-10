@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function-expressions</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="function-expressions.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>function-expressions</h1>
+        <p class="header__description">
+          The function keyword can be used to define a function inside an
+          expression.
+        </p>
+      </div>
+      <div class="content">
+        <p id="pCount">0</p>
+        <button id="decreaseButton">Decrease</button>
+        <button id="increaseButton">Increase</button>
+      </div>
+    </main>
+    <div id="code">
+      <!-- <pre><code class="language-js"></code></pre> -->
+      <p>functions that are assigned to buttons are anonymous</p>
+      <p>these dont have a name and are unique to that expression</p>
+      <pre><code class="language-js">
+increaseButton.onclick = function () {
+  count += 1;
+  pCount.innerHTML = count;
+};
+decreaseButton.onclick = function () {
+  count -= 1;
+  pCount.innerHTML = count;
+};
+      </code></pre>
+    </div>
+    <script src="function-expressions.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

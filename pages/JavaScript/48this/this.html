@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="this.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>this</h1>
+        <p class="header__description">
+          this keyword refers to the current execution context. It's often used
+          within functions and methods to access or manipulate the properties
+          and methods of the object that the function is bound to. The exact
+          value of this depends on how the function is called or where it's
+          defined. It plays a crucial role in object-oriented programming and
+          helps determine the context in which code is executed.
+        </p>
+        <p><b>it is a reference to a particular object</b></p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const car1 = {
+  model: "Fiat",
+
+  drive: function () {
+    console.log(`You drive the ${this.model}`);
+  },
+};
+
+const car2 = {
+  model: "Porsche",
+
+  drive: function () {
+    console.log(`You drive the ${this.model}`);
+  },
+};
+      </code></pre>
+    </div>
+    <script src="this.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

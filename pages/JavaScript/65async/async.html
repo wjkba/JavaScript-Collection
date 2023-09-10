@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="async.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>async</h1>
+        <p class="header__description">
+          The async keyword in JavaScript is used to define asynchronous
+          functions. It indicates that a function will perform asynchronous
+          operations, typically involving promises, and can use the await
+          keyword to pause its execution until a promise is resolved. This makes
+          it easier to write and manage asynchronous code by making it appear
+          more like synchronous code, enhancing readability and maintainability.
+          Async functions return promises implicitly, allowing you to work with
+          them using promise-based patterns.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+//async = makes a function return a Promise
+
+async function loadFile() {
+  let fileLoaded = true;
+  if (fileLoaded) {
+    return "File loaded";
+  } else {
+    return "File NOT loaded";
+  }
+}
+
+loadFile()
+  .then((value) => console.log(value))
+  .catch((error) => console.log(error));
+
+      </code></pre>
+    </div>
+    <script src="async.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

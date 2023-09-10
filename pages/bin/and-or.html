@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>and-or</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="and-or.css" />
+  </head>
+  <body>
+    <h1>and-or</h1>
+    <main>
+      <div id="div01">
+        <h3>Zakres od 0 do 100</h3>
+        <p id="abcde">A B C D E</p>
+        <div class="gradient1"></div>
+        <div class="scale">
+          <pre class="preLeft">100</pre>
+          <pre class="preRight">0</pre>
+        </div>
+        <input id="input01" /><button id="button01">submit</button>
+        <p id="p01">:result</p>
+      </div>
+      <pre><code class="language-js">
+// && AND (BOTH conditions must be true)
+// && || OR (EITHER condition can be true)
+
+let num;
+
+button01.onclick = function () {
+  var button01 = document.getElementById("button01");
+  var input01 = document.getElementById("input01");
+  var p01 = document.getElementById("p01");
+  num = input01.value;
+  num = Number(num);
+  if (num <= 100 && num >= 80) {
+    p01.innerHTML = "A";
+  } else if (num < 80 && num >= 60) {
+    p01.innerHTML = "B";
+  } else if (num < 60 && num >= 40) {
+    p01.innerHTML = "C";
+  } else if (num < 40 && num >= 20) {
+    p01.innerHTML = "D";
+  } else if (num < 20 && num >= 1) {
+    p01.innerHTML = "E";
+  } else {
+    p01.innerHTML = "error";
+  }
+};
+
+      </code></pre>
+      <div id="div02">
+        <h3>Boolean checkbox OR</h3>
+        <div>
+          <input id="input02" />
+          <label>use 1,3,5,7 or 9</label>
+          <div class="greenred">
+            <div id="green">OK</div>
+            <div id="red">wrong</div>
+          </div>
+        </div>
+        <pre><code class="language-js">
+// && || OR (EITHER condition can be true)
+
+const input02 = document.getElementById("input02");
+const green = document.getElementById("green");
+const red = document.getElementById("red");
+
+input02.addEventListener("change", function () {
+  var input = input02.value;
+  if (input == 1 || input == 3 || input == 5 || input == 7 || input == 9) {
+    console.log("OK");
+    green.style.visibility = "visible";
+    red.style.visibility = "hidden";
+  } else {
+    console.log("Use one of the following numbers: 1, 3, 5, 7, 9");
+    red.style.visibility = "visible";
+    green.style.visibility = "hidden";
+  }
+});
+        </code></pre>
+      </div>
+    </main>
+
+    <script src="and-or.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array</h1>
+        <p class="header__description">
+          Arrays in JavaScript are ordered collections of values that can hold
+          different data types, such as numbers, strings, or objects. They are
+          denoted by square brackets [] and allow you to store and manipulate
+          multiple items in a single variable. Arrays are zero-indexed, meaning
+          the first element is accessed using index 0, the second with index 1,
+          and so on. They offer various built-in methods for adding, removing,
+          and manipulating elements, making them fundamental for managing and
+          organizing data in JavaScript.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <p>simple array</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+console.log(fruits); // (3) 0: "apple" 1: "orange" 2: "banana" length: 3
+console.log(fruits[1]); // orange 
+      </code></pre>
+      <p>replace certain element in array using index number</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+fruits[0] = "coconut";
+console.log(fruits); // (3) 0:"coconut" 1:"orange" 2:"banana" length 3
+
+      </code></pre>
+      <p>add element to the end of array</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+fruits.push("lemon"); // add an element
+console.log(fruits); // (4) 0: "apple" 1: "orange" 2: "banana" 3: "lemon"
+
+      </code></pre>
+      <p>remove last element</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+fruits.pop(); // remove last element
+console.log(fruits); // (2) 0: "apple" 1: "orange"
+
+      </code></pre>
+      <p>add element to beginning</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+fruits.unshift("mango"); // add element to beginning
+console.log(fruits); // (4) 0: "mango" 1: "apple" 2: "orange" 3: "banana"
+      </code></pre>
+      <p>remove element from beginning</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana"];
+fruits.shift(); // remove element from beginning
+console.log(fruits); // (2) 0: "orange" 1: "banana"
+      </code></pre>
+      <p>array length</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana", "mango", "lemon"];
+let length = fruits.length;
+console.log(length); // 5
+      </code></pre>
+      <p>array index</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana", "mango", "lemon"];
+let index = fruits.indexOf("banana");
+console.log(index); // 2
+      </code></pre>
+    </div>
+    <script src="array.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

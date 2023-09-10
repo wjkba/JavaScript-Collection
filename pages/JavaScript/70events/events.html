@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>events</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="events.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>events</h1>
+        <p class="header__description">
+          Events refer to interactions or occurrences in the web browser, such
+          as user actions (e.g., clicks, keypresses), system events (e.g., page
+          loading, resizing), or custom triggers. JavaScript allows you to
+          listen for and respond to these events using event listeners. Event
+          listeners are functions that are executed in response to a specific
+          event, enabling you to add interactivity and behavior to your web
+          pages. Events are a fundamental part of creating dynamic and
+          interactive web applications.
+        </p>
+      </div>
+      <div class="content">
+        <pre><code class="language-js">
+//onload
+const element = document.body;
+element.onload = () => alert("This is an onload event");
+        </code></pre>
+
+        <p>onclick</p>
+        <button id="myButton">button</button>
+        <pre><code class="language-js">
+//onclick
+const myButton = document.getElementById("myButton");
+myButton.onclick = () => alert("This is an onclick event");
+        </code></pre>
+
+        <p>onchange</p>
+        <input type="text" id="myInput" />
+        <pre><code class="language-js">
+//onchange
+const myInput = document.getElementById("myInput");
+myInput.onchange = () => alert("This is an onchange event");
+        </code></pre>
+
+        <p>onmouseover/onmouseout</p>
+        <div class="box" id="myDiv"></div>
+        <pre><code class="language-js">
+//onmouseover/onmouseout
+const myDiv = document.getElementById("myDiv");
+myDiv.onmouseover = () => (myDiv.style.backgroundColor = "#89e757");
+myDiv.onmouseout = () => (myDiv.style.backgroundColor = "#B3E8FF");
+        </code></pre>
+
+        <p>onmousedown/onmouseup</p>
+        <div class="box" id="myDiv2"></div>
+        <pre><code class="language-js">
+//onmousedown/onmouseup
+const myDiv2 = document.getElementById("myDiv2");
+myDiv2.onmousedown = () => (myDiv2.style.backgroundColor = "#c962c1");
+myDiv2.onmouseup = () => (myDiv2.style.backgroundColor = "#B3E8FF");
+        </code></pre>
+      </div>
+    </main>
+    <div id="code"></div>
+    <script src="events.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

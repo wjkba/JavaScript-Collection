@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>random-number-generator</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="random-number-generator.css" />
+  </head>
+  <body>
+    <h1>random-number-generator</h1>
+    <main>
+      <h2>Four-sided dice</h2>
+      <div name="4SIDED" class="flex">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/1/19/4-sided_dice_250.jpg"
+        />
+        <p id="p_4s"></p>
+      </div>
+      <button id="button_4s">roll</button>
+      <h2>Six-sided dice</h2>
+      <div name="6SIDED" class="flex">
+        <img
+          src="https://spaces-cdn.clipsafari.com/m59adigjmaljun62h7ve8wx4zlcp"
+        />
+        <p id="p_6s"></p>
+      </div>
+      <button id="button_6s">roll</button>
+      <h2>Twelve-sided dice</h2>
+      <div name="12SIDED" class="flex">
+        <img
+          src="https://cdn11.bigcommerce.com/s-70184/images/stencil/1280x1280/products/4075/11414/scarab-dice-d12-royal-blue__31138.1649194283.jpg?c=2"
+        />
+        <p id="p_12s"></p>
+      </div>
+      <button id="button_12s">roll</button>
+      <pre><code class="language-js">
+let a;
+let b;
+let c;
+
+document.getElementById("button_4s").onclick = function () {
+  a = Math.floor(Math.random() * 4) + 1; //Computers always start with 0 that's why we have to add +1
+  document.getElementById("p_4s").innerHTML = a;
+};
+
+document.getElementById("button_6s").onclick = function () {
+  b = Math.floor(Math.random() * 6) + 1; //Computers always start with 0 that's why we have to add +1
+  document.getElementById("p_6s").innerHTML = b;
+};
+
+document.getElementById("button_12s").onclick = function () {
+  c = Math.floor(Math.random() * 12) + 1; //Computers always start with 0 that's why we have to add +1
+  document.getElementById("p_12s").innerHTML = c;
+};
+
+      </code></pre>
+    </main>
+    <script src="random-number-generator.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

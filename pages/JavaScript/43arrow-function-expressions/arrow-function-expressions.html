@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrow-function-expressions</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="arrow-function-expressions.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>arrow-function-expressions</h1>
+        <p class="header__description">
+          Arrow functions in JavaScript are a concise way to define functions
+          using the => syntax. They provide a more streamlined syntax for
+          writing function expressions, especially when functions are short and
+          simple. Arrow functions automatically capture the surrounding
+          context's this value, making them particularly useful in callback
+          functions and for avoiding issues with this scoping.
+        </p>
+      </div>
+      <div id="box1">
+        <p>
+          ((<span style="color: #4be3c0">arguments</span>)
+          <span style="color: #c84dec">=></span
+          ><span style="color: #dc4a68">code-to-execute</span>)
+        </p>
+      </div>
+    </main>
+    <div id="code">
+      <p>simple arrow function</p>
+      <pre><code class="language-js">
+const greeting = (username) => console.log(`Hello ${username}`);
+greeting("John");
+      </code></pre>
+      <p>simple arrow function with two arguments</p>
+      <pre><code class="language-js">
+const greeting2 = (username, age) =>
+  console.log(`Hello ${username}, you are ${age} years old.`);
+  
+greeting2("John", 21);
+      </code></pre>
+      <p>sort an array using arrow functions</p>
+      <pre><code class="language-js">
+let grades = [20, 50, 70, 90, 40, 60, 30, 100, 14];
+
+grades.sort((x, y) => y - x);
+grades.forEach((element) => console.log(element));
+      </code></pre>
+    </div>
+    <script src="arrow-function-expressions.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

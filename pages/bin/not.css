@@ -1,0 +1,19 @@
+body {
+  padding: 2rem;
+}
+main {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+p,
+label {
+  font-family: Verdana, sans-serif;
+  font-size: 1.2rem;
+}
+#p1 {
+  max-width: 20rem;
+  padding: 0.5rem;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Modules.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Modules</h1>
+        <p class="header__description">
+          ES6 modules in JavaScript are a way to organize and structure code by
+          breaking it into separate, reusable pieces. They provide a mechanism
+          for creating encapsulated modules of code, where variables, functions,
+          and classes can be defined and exported for use in other parts of your
+          application. ES6 modules use import and export statements to
+          facilitate the sharing of code between different JavaScript files.
+          This modular approach enhances code maintainability, reusability, and
+          helps prevent naming conflicts, making it a foundational feature of
+          modern JavaScript development.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <p>Modules.js (current)</p>
+      <pre><code class="language-js">
+import { myVariable, myFunction1, myFunction2 } from "./module1.js";
+import * as module2 from "./module2.js";
+
+console.log(myVariable);
+myFunction1();
+myFunction2();
+module2.myFunction3();
+      </code></pre>
+      <p>module1.js</p>
+      <pre><code class="language-js">
+export let myVariable = "This variable is located in module1.js";
+
+export function myFunction1() {
+  console.log("myFunction1 imported from module1.js");
+}
+
+export function myFunction2() {
+  console.log("myFunction2 imported from module1.js");
+}
+
+      </code></pre>
+      <p>module2.js</p>
+      <pre><code class="language-js">
+export function myFunction3() {
+  console.log("myFunction3 imported from module2.js");
+}
+
+      </code></pre>
+    </div>
+    <script type="module" src="Modules.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

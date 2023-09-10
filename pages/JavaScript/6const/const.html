@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>const</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="const.css" />
+  </head>
+  <body>
+    <header>
+      <h1>const</h1>
+      <p>const = constans a variable that can't be changed</p>
+    </header>
+    <main>
+      <label>Enter the radius of a circle: </label><input id="input_radius" />
+      <button type="button" id="button_submit">submit</button>
+      <p id="p_result"></p>
+    </main>
+    <pre><code class="language-js">
+const PI = 3.14159;
+let radius;
+let circ;
+
+document.getElementById("button_submit").onclick = function () {
+  radius = document.getElementById("input_radius").value;
+  radius = Number(radius);
+  circ = 2 * PI * radius;
+  document.getElementById("p_result").innerHTML = "Obwód wynosi: " + circ;
+};
+    </code></pre>
+    <script src="const.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

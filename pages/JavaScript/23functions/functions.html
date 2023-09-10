@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>functions</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="functions.css" />
+  </head>
+  <body>
+    <h1>functions</h1>
+    <main>
+          <div class="inputForm">
+          <label>Name: </label>
+    <input id="inputName">
+    <label>Surname: </label>
+    <input id="inputSurname">
+    <button id="buttonSubmit" onclick="generateCard()">Submit</button>
+    </div>
+    <div class="userCard">
+      <div class="leftBox">
+        <img id="imgPhoto" src="images/photo.png" />
+        <img id="imgCode" src="images/code.png" />
+        <p id="pSurname">NAZWISKO</p>
+        <p id="pName">IMIE</p>
+      </div>
+      <div class="rightBox">
+        <div class="flexTop">
+          <p>HAWAII</p>
+          <label>DRIVER LICENSE</label>
+        </div>
+        <div class="flexNumber">
+          <span>NUMBER:</span> <span id="spanNumber">XXX-XXX-XXX</span>
+        </div>
+        <img id="imgStamp" src="https://www.freepnglogos.com/uploads/stamp-png/certified-stamp-png-transparent-onlygfxm-1.png"></img>
+      </div>
+    </div>
+    </main>
+    <pre><code class="language-js">
+const buttonSubmit = document.getElementById("buttonSubmit");
+
+function generateCard() {
+  var pSurname = document.getElementById("pSurname");
+  var inputSurname = document.getElementById("inputSurname");
+  var pName = document.getElementById("pName");
+  var inputName = document.getElementById("inputName");
+  var spanNumber = document.getElementById("spanNumber");
+  pSurname.innerHTML = String(inputSurname.value).toUpperCase();
+  pName.innerHTML = String(inputName.value).toUpperCase();
+  spanNumber.innerHTML = String(
+    Math.floor(Math.random() * 999999999 + 100000000)
+  );
+}
+    </code></pre>
+
+    <script src="functions.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

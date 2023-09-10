@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="setInterval().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>setInterval()</h1>
+        <p class="header__description">
+          <b>setInterval()</b> is a function that
+          <b
+            >repeatedly executes a specified function or code block at a defined
+            interval</b
+          >
+          in milliseconds. It's often used for tasks like creating animations,
+          polling for updates, or running periodic checks. The function
+          specified will keep executing at the defined interval until you
+          explicitly stop it using <b>clearInterval()</b>.
+        </p>
+      </div>
+      <div class="content">
+        <label>Count up to: </label>
+        <input type="text" id="inputUser" />
+        <button id="buttonSubmit">Submit</button>
+        <p id="p1"></p>
+      </div>
+    </main>
+    <div id="code">
+      <p>basic interval</p>
+      <pre><code class="language-js">
+let count = 0;
+let max = window.prompt("Count up to what #?");
+max = Number(max);
+
+const timer1 = setInterval(countUp, 1000); //function is passed as argument
+
+function countUp() {
+  count += 1;
+  console.log(count);
+  if (count >= max) {
+    clearInterval(timer1);
+  }
+}
+
+      </code></pre>
+      <p>page</p>
+      <pre><code class="language-js">
+inputUser = document.getElementById("inputUser");
+buttonSubmit = document.getElementById("buttonSubmit");
+p1 = document.getElementById("p1");
+
+let count = 0;
+let max = 0;
+let timer1;
+
+buttonSubmit.onclick = function () {
+  max = Number(inputUser.value);
+  timer1 = setInterval(countUp, 1000); //function is passed as argument
+};
+
+function countUp() {
+  count += 1;
+  p1.innerHTML += `<br>${count}`;
+  if (count >= max) {
+    clearInterval(timer1);
+  }
+}
+      </code></pre>
+    </div>
+    <script src="setInterval().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

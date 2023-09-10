@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>temperature-conversion</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="temperature-conversion.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>temperature-conversion</h1>
+        <p class="header__description">simple app to convert temperatures</p>
+      </div>
+      <div class="content">
+        <label>Enter a temperature: </label>
+        <input id="inputTemp" placeholder="0" />
+        <label id="labelTemp"></label>
+        <p><b>convert to:</b></p>
+        <div class="celsius">
+          <input id="radioCelsius" name="unit" type="radio" />
+          <label>Celsius</label>
+        </div>
+        <div class="fahrenheit">
+          <input id="radioFahrenheit" name="unit" type="radio" />
+          <label>Fahrenheit</label>
+        </div>
+        <button id="buttonSubmit">Submit</button>
+      </div>
+      <p id="p1">result</p>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+let temp = 0;
+const labelTemp = document.getElementById("labelTemp");
+const inputTemp = document.getElementById("inputTemp");
+const buttonSubmit = document.getElementById("buttonSubmit");
+const radioCelsius = document.getElementById("radioCelsius");
+const radioFahrenheit = document.getElementById("radioFahrenheit");
+const p1 = document.getElementById("p1");
+
+radioCelsius.addEventListener("change", function () {
+  labelTemp.innerHTML = "°F";
+  labelTemp.style.visibility = "visible";
+});
+radioFahrenheit.addEventListener("change", function () {
+  labelTemp.innerHTML = "°C";
+  labelTemp.style.visibility = "visible";
+});
+
+buttonSubmit.onclick = function () {
+  temp = Number(inputTemp.value);
+  if (radioCelsius.checked == true) {
+    temp = toCelsius(temp);
+    p1.innerHTML = temp + "°C";
+  } else if (radioFahrenheit.checked == true) {
+    temp = toFahrenheit(temp);
+    p1.innerHTML = temp + "°F";
+  } else {
+    console.log("x");
+  }
+};
+
+function toCelsius(temp) {
+  return (temp - 32) * (5 / 9);
+}
+function toFahrenheit(temp) {
+  return temp * (9 / 5) + 32;
+}
+      </code></pre>
+    </div>
+    <script src="temperature-conversion.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

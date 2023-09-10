@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>date-objects</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="date-objects.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>date-objects</h1>
+        <p class="header__description">
+          Date objects are used to work with dates and times. They allow you to
+          represent, manipulate, and format dates and times. Date objects can be
+          created to represent specific moments in time, and they provide
+          methods for tasks like retrieving the current date and time,
+          formatting dates, and performing date arithmetic. They are a
+          fundamental part of working with time-related data in JavaScript.
+        </p>
+      </div>
+      <div class="content">
+        <p id="p1">Current date:</p>
+        <p id="p2">Custom date:</p>
+        <p id="p3"></p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+let date = new Date();
+console.log(date); //Date Sun Sep 03 2023 14:45:00 GMT+0200 (Central European Summer Time)
+date = date.toLocaleString(); // makes the date more readable
+p1.innerHTML += ` ${date}`;
+
+let date2 = new Date(2004, 5, 3, 12, 30, 40);
+date2 = date2.toLocaleString();
+p2.innerHTML += ` ${date2}`;
+
+let date3 = new Date();
+let year = date3.getFullYear();
+let month = date3.getMonth();
+let day = date3.getDay();
+const dayNames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+p3.innerHTML += `Year: ${year} <br>Month: ${month}<br>Day: ${dayNames[day]}`;
+      </code></pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+    </div>
+    <script src="date-objects.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

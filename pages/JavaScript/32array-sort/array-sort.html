@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array-sort</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array-sort.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array-sort</h1>
+        <p class="header__description">
+          Array sorting in JavaScript refers to arranging the elements of an
+          array in a specific order, typically either ascending or descending.
+          This is accomplished using the sort() method, which can be applied to
+          arrays containing primitive values like numbers or strings.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <p>sort array in alphabetical order:</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana", "mango", "lemon"];
+fruits = fruits.sort();
+      </code></pre>
+      <pre>
+apple
+banana
+lemon
+mango
+orange
+      </pre>
+      <p>sort array in reverse alphabetical order:</p>
+      <pre><code class="language-js">
+let fruits = ["apple", "orange", "banana", "mango", "lemon"];
+fruits = fruits.sort().reverse();
+      </code></pre>
+      <pre>
+orange
+mango 
+lemon
+banana
+apple
+      </pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+      <pre><code class="language-js"></code></pre>
+    </div>
+    <script src="array-sort.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

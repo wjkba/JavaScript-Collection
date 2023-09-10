@@ -1,0 +1,101 @@
+body {
+  padding: 2rem;
+  background-color: antiquewhite;
+}
+main {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+p {
+  margin: 0;
+}
+input {
+  width: 10rem;
+  margin-bottom: 0.2rem;
+}
+
+.userCard {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 1rem;
+  height: 21rem;
+  max-width: 36rem;
+  display: flex;
+}
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+#buttonSubmit {
+  width: 10.5rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.flexTop {
+  display: flex;
+  align-items: center;
+}
+.flexTop p {
+  font-size: 3.2rem;
+  color: rgb(9, 84, 155);
+  font-weight: 700;
+}
+.flexTop label {
+  margin-left: 0.4rem;
+}
+
+#pSurname {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0.8rem;
+}
+#pName {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0.8rem;
+}
+.leftBox {
+  display: flex;
+
+  flex-direction: column;
+  background-color: white;
+  width: 15rem;
+}
+.leftBox #imgPhoto {
+  height: 14rem;
+  width: 12rem;
+  align-self: center;
+  margin-bottom: 0.4rem;
+}
+.leftBox #imgCode {
+  background-color: white;
+  max-height: 3rem;
+  width: 13.5rem;
+  align-self: center;
+}
+.rightBox {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  margin-left: 1rem;
+  height: 21rem;
+}
+.rightBox #imgStamp {
+  max-height: 8rem;
+  max-width: 8rem;
+  background-color: rgb(239, 239, 239);
+  border-radius: 4rem;
+  align-self: flex-end;
+  margin-right: 2rem;
+  margin-top: 7rem;
+  visibility: hidden;
+}
+#spanNumber {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: monospace;
+}

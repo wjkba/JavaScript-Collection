@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>anonymous-objects</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="anonymous-objects.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>anonymous-objects</h1>
+        <p class="header__description">
+          Anonymous objects in JavaScript refer to objects that are created
+          without being assigned to a specific variable or name. They are
+          typically used temporarily for a single purpose, often as arguments
+          when calling functions or for on-the-fly data organization. These
+          objects lack a defined identifier and are constructed and used
+          directly within the code where needed.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Card {
+  constructor(value, suit) {
+    this.value = value;
+    this.suit = suit;
+  }
+}
+
+let cards = [
+  new Card("A", "Hearts"),
+  new Card("A", "Spades"),
+  new Card("A", "Diamonds"),
+  new Card("A", "Clubs"),
+  new Card("10", "Hearts"),
+  new Card("10", "Spades"),
+  new Card("10", "Diamonds"),
+  new Card("10", "Clubs"),
+];
+
+//anonymous objects can be refernced by an index number
+//display all - method I
+cards.forEach((card) => console.log(`${card.value} of ${card.suit}`));
+//display all - method II
+function displayAll(cards) {
+  for (let i = 0; i < cards.length; i += 1) {
+    console.log(`${cards[i].value} of ${cards[i].suit}`);
+  }
+}
+      </code></pre>
+    </div>
+    <script src="anonymous-objects.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

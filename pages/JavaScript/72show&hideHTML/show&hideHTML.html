@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>show&hideHTML</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="show&hideHTML.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>show/hide HTML</h1>
+        <p class="header__description"></p>
+      </div>
+      <div class="content">
+        <button id="myButton">Toggle</button><br />
+        <img id="myImg" src="images/image.png" />
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const myButton = document.getElementById("myButton");
+const myImg = document.getElementById("myImg");
+myButton.addEventListener("click", () => {
+  if (myImg.style.display == "none") {
+    myImg.style.display = "block";
+  } else myImg.style.display = "none";
+});
+
+      </code></pre>
+    </div>
+    <script src="show&hideHTML.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inheritance</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="inheritance.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>inheritance</h1>
+        <p class="header__description">
+          a child class can inherit all the methods and properties from another
+          class.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <p>
+        Rabbit, Fish and Bird classes all inherit properties from their parent
+        class which is Animal
+      </p>
+      <pre><code class="language-js">
+class Animal {
+  alive = true;
+  eat() {
+    console.log(`This ${this.name} is eating`);
+  }
+  sleep() {
+    console.log(`This ${this.name} is sleeping`);
+  }
+}
+
+class Rabbit extends Animal {
+  name = "rabbit";
+  run() {
+    console.log(`This ${this.name} is running`);
+  }
+}
+class Fish extends Animal {
+  name = "fish";
+  swim() {
+    console.log(`This ${this.name} is swimming`);
+  }
+}
+class Bird extends Animal {
+  name = "bird";
+  fly() {
+    console.log(`This ${this.name} is flying`);
+  }
+}
+      </code></pre>
+    </div>
+    <script src="inheritance.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

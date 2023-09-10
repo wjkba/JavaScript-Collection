@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array.filter()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array.filter().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array.filter()</h1>
+        <p class="header__description">
+          The filter() method of Array instances creates a shallow copy of a
+          portion of a given array, filtered down to just the elements from the
+          given array that pass the test implemented by the provided function.
+        </p>
+      </div>
+      <div class="content">
+        <button id="buttonAges">print ages array to console</button>
+        <button id="buttonAgesAdult">print adult ages array to console</button>
+      </div>
+    </main>
+    <div id="code">
+      <!-- <pre><code class="language-js"></code></pre> -->
+      <pre><code class="language-js">
+let arrayAges = [14, 16, 17, 18, 19, 20, 21, 23];
+let arrayAgesAdult = arrayAges.filter(checkAge);
+
+arrayAgesAdult.forEach(print);
+
+function checkAge(element) {
+  return element >= 18;
+}
+function print(x) {
+  console.log(x);
+}
+      </code></pre>
+    </div>
+
+    <script src="array.filter().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array-loop</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="array-loop.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>array-loop</h1>
+        <p class="header__description">
+          Array looping in JavaScript involves iterating through each element of
+          an array to perform a specific action, like processing, modifying, or
+          extracting information.
+        </p>
+      </div>
+      <div class="content">
+        <div class="container">
+          <div class="container__array">
+            <label>Array: </label
+            ><span>[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]</span>
+          </div>
+          <div class="container__index">
+            <label>Index: </label>
+            <span>0 1 2 3 4 5 6 7 8 9</span>
+          </div>
+        </div>
+        <div><button id="buttonLoop1">loop through an array</button></div>
+        <div>
+          <button id="buttonLoop2">loop through an array backwards</button>
+        </div>
+      </div>
+    </main>
+    <div id="code">
+      <p>number of numbers</p>
+      <pre><code class="language-js">
+for (let number of numbers) {
+  console.log(number);
+}
+      </code></pre>
+      <p>loop through an array</p>
+      <pre><code class="language-js">
+let numbers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+for (let i = 0; i < numbers.length; i += 1) {
+  console.log(numbers[i]);
+}
+      </code></pre>
+      <p>loop through an array backwards</p>
+      <pre><code class="language-js">
+let numbers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+for (let i = numbers.length - 1; i >= 0; i -= 1) {
+  console.log(numbers[i]);
+}
+      </code></pre>
+    </div>
+    <script src="array-loop.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

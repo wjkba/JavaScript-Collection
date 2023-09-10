@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>format-currency</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="format-currency.css" />
+  </head>
+  <body>
+    <h1>format-currency</h1>
+    <label>Enter a number: </label>
+    <input id="inputNum" />
+    <div class="flex">
+      <p id="pNum">0.00</p>
+      <select id="selector">
+        <option></option>
+        <option>PLN</option>
+        <option>EURO</option>
+        <option>USD</option>
+        <option>GBP</option>
+      </select>
+    </div>
+    <pre><code class="language-js">
+  pNum.innerHTML = number.toLocaleString("pl-PL", {
+    style: "currency",
+    currency: "PLN",
+  });
+  
+  pNum.innerHTML = number.toLocaleString("de-DE", {
+  style: "currency",
+  currency: "EUR",
+  });
+
+  pNum.innerHTML = number.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  pNum.innerHTML = number.toLocaleString("en-GB", {
+  style: "currency",
+  currency: "GBP",
+  });
+    </code></pre>
+    <pre><code class="language-js">
+const pNum = document.getElementById("pNum");
+const inputNum = document.getElementById("inputNum");
+
+inputNum.addEventListener("change", function () {
+  number = Number(inputNum.value);
+  pNum.innerHTML = number;
+});
+
+let selection;
+const selector = document.getElementById("selector");
+selector.addEventListener("change", function () {
+  selection = selector.value;
+  console.log(selection);
+  switch (selection) {
+    case "PLN":
+      pNum.innerHTML = number.toLocaleString("pl-PL", {
+        style: "currency",
+        currency: "PLN",
+      });
+      break;
+    case "EURO":
+      pNum.innerHTML = number.toLocaleString("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      });
+      break;
+    case "USD":
+      pNum.innerHTML = number.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+      break;
+    case "GBP":
+      pNum.innerHTML = number.toLocaleString("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      });
+      break;
+    default:
+      break;
+  }
+});
+
+    </code></pre>
+    <script src="format-currency.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

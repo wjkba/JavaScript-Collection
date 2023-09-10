@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>while-loops</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="while-loops.css" />
+  </head>
+  <body>
+    <h1>while-loops</h1>
+    <div>
+      <button id="buttonWhile">start while loop</button>
+      <p id="p1"></p>
+    </div>
+    <pre><code class="language-js">
+const buttonWhile = document.getElementById("buttonWhile");
+let userName = "";
+
+buttonWhile.onclick = function () {
+  while (userName == "" || userName == null) {
+    userName = window.prompt(
+      "This while loop won't stop unless you input a text(e.g username): "
+    );
+  }
+  console.log("Welcome " + userName);
+  document.getElementById("p1").innerHTML = "Welcome " + userName;
+};
+    </code></pre>
+    <script src="while-loops.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

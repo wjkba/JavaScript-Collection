@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var-vs-let</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="var-vs-let.css" />
+  </head>
+  <body>
+    <h1>var-vs-let</h1>
+    <p>
+      global variables are variables that are defined outside of any functions
+    </p>
+    <p>
+      global variables should be defined by let, do not use var for global
+      functions
+    </p>
+    <pre id="code"><code class="language-js">let name = "John";
+
+console.log(name) ✅
+    </code></pre>
+    <p>let variables don't exist outside the block scope</p>
+    <p>if we try to console.log(i) outside that block it won't be defined</p>
+    <pre id="code"><code class="language-js">
+for (let i = 1; i <= 3; i += 1) {
+  console.log(i);
+}
+
+console.log(i) ❌
+    </code></pre>
+    <p>
+      var is not limited by the block scope so we can access it even after for
+      loop ends
+    </p>
+    <pre id="code"><code class="language-js">
+for (var j = 1; j <= 3; j += 1) {
+  console.log(j);
+}
+
+console.log(j) ✅
+    </code></pre>
+    <p>var can be limited by a function</p>
+    <p>var is not accessible outside of that function</p>
+    <pre id="code"><code class="language-js">
+myFunction();
+function myFunction() {
+  for (var k = 1; k <= 3; k += 1) {
+    console.log(k);
+  }
+}
+console.log(k) ❌
+    </code></pre>
+    <script src="var-vs-let.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

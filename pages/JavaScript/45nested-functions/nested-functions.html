@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nested-functions</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="nested-functions.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>nested-functions</h1>
+        <p class="header__description">
+          Nested functions in JavaScript refer to the practice of defining a
+          function inside another function. The inner function is encapsulated
+          within the scope of the outer function, allowing it to access
+          variables and parameters from its containing function. This can be
+          useful for creating private functions or organizing code into modular
+          components. However, it's important to note that each time the outer
+          function is called, a new instance of the inner function is created,
+          potentially affecting memory usage if used excessively.
+        </p>
+        <p><u>Outer functions have access to inner functions.</u></p>
+        <p>
+          <u>Inner functions are "hidden" from outside the outer function.</u>
+        </p>
+      </div>
+      <div class="content">
+        <label>Username: </label>
+        <input id="inputUsername" />
+        <button id="buttonLogin">login</button>
+        <p id="p1"></p>
+      </div>
+    </main>
+    <div id="code">
+      <p>nested functions:</p>
+      <pre><code class="language-js">
+function login() {
+  // You can access the following functions only after logging in ^
+  displayUsername();
+  displayUserInbox();
+  
+  // These are nested functions
+  function displayUsername() {
+    p1.innerHTML = `Welcome <b>${username}</b>`;
+  }
+  function displayUserInbox() {
+    let newElement = document.createElement("p");
+    p1.appendChild(newElement);
+    newElement.innerHTML = `You have ${userInbox} new messages.`;
+  }
+}
+      </code></pre>
+      <p>page:</p>
+      <pre><code class="language-js">
+const inputUsername = document.getElementById("inputUsername");
+const buttonLogin = document.getElementById("buttonLogin");
+const p1 = document.getElementById("p1");
+
+let username = "";
+let userInbox = 0;
+
+buttonLogin.onclick = function () {
+  username = String(inputUsername.value);
+  login();
+};
+
+function login() {
+  // You can access the following functions only after logging in ^
+  displayUsername();
+  displayUserInbox();
+  
+  // These are nested functions
+  function displayUsername() {
+    p1.innerHTML = `Welcome <b>${username}</b>`;
+  }
+  function displayUserInbox() {
+    let pNewElement = document.createElement("p");
+    p1.appendChild(pNewElement);
+    pNewElement.innerHTML = `You have ${userInbox} new messages.`;
+  }
+}
+
+      </code></pre>
+    </div>
+    <script src="nested-functions.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

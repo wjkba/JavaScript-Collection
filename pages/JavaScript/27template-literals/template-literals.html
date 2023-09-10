@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>template-literals</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="template-literals.css" />
+  </head>
+  <body>
+    <h1>template-literals</h1>
+    <div class="flex">
+      <div id="div01">
+        <img
+          id="imgShop"
+          src="https://rocateq.com/wp-content/uploads/2020/01/rocateq_shoppingbasket_isolated-1.png"
+        />
+        <p>test_item</p>
+        <p id="pTotal">0PLN</p>
+        <div class="flexrow">
+          <button id="buttonitemDecrease">-</button>
+          <p id="pCount">0</p>
+          <button id="buttonItemIncrease">+</button>
+        </div>
+      </div>
+      <div>
+        <input id="inputUsername" placeholder="Enter your username" />
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+      </div>
+    </div>
+    <p>
+      template iterals = delimited with (`) instead of double or single quotes
+      allows embedded variables and expressions
+    </p>
+    <pre id="code"><code class="language-js">p1.innerHTML = `Hello ${username}`;
+p2.innerHTML = `You have ${itemCount} items in your cart`;
+p3.innerHTML = `Your total is ${total}PLN`;
+pTotal.innerHTML = `${total}PLN`;</code></pre>
+
+    <pre><code class="language-js">
+const inputUsername = document.getElementById("inputUsername");
+let username = "";
+const p1 = document.getElementById("p1");
+const p2 = document.getElementById("p2");
+const p3 = document.getElementById("p3");
+const pTotal = document.getElementById("pTotal");
+const buttonItemDecrease = document.getElementById("buttonitemDecrease");
+const pCount = document.getElementById("pCount");
+const buttonItemIncrease = document.getElementById("buttonItemIncrease");
+
+let itemCount = 0;
+let price = 7.5;
+let total;
+inputUsername.addEventListener("change", function () {
+  username = inputUsername.value;
+  p1.innerHTML = `Hello ${username}`;
+    inputUsername.style.visibility = "hidden";
+});
+buttonItemIncrease.onclick = function () {
+  itemCount += 1;
+  pCount.innerHTML = itemCount;
+  p2.innerHTML = `You have ${itemCount} items in your cart`;
+  total = checkTotal(itemCount, price);
+  p3.innerHTML = `Your total is ${total}PLN`;
+  pTotal.innerHTML = `${total}PLN`;
+};
+
+buttonItemDecrease.onclick = function () {
+  if (itemCount == 0) {
+    console.log("0");
+  } else {
+    itemCount -= 1;
+    pCount.innerHTML = itemCount;
+    p2.innerHTML = `You have ${itemCount} items in your cart`;
+    total = checkTotal(itemCount, price);
+    p3.innerHTML = `Your total is ${total}PLN`;
+    pTotal.innerHTML = `${total}PLN`;
+  }
+};
+
+function checkTotal(itemCount, price) {
+  return itemCount * price;
+}
+
+    </code></pre>
+    <script src="template-literals.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

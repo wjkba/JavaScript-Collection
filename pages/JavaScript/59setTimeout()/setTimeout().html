@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout()</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="setTimeout().css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>setTimeout()</h1>
+        <p class="header__description">
+          setTimeout() is a function that schedules the execution of a specified
+          function or code snippet after a specified delay in milliseconds.
+          <b
+            >It's commonly used for introducing delays or executing code
+            asynchronously.</b
+          >
+          When the delay is reached, the function is added to the execution
+          queue and will run when the JavaScript engine is available.
+        </p>
+      </div>
+      <div class="content">
+        <div class="flex">
+          <div id="leftContainer">
+            <button id="buttonSet">Set</button>
+            <button id="buttonClear">Clear</button>
+            <p id="p1"></p>
+          </div>
+          <div id="rightContainer">
+            <p id="p2">
+              timer1 = 3s<br />
+              timer2= 6s<br />
+              timer3 = 9s
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+buttonSet.onclick = function () {
+  timer1 = setTimeout(firstMessaage, 3000); // 1000ms = 1s
+  timer2 = setTimeout(secondMessaage, 6000);
+  timer3 = setTimeout(thirdMessaage, 9000);
+  p1.innerHTML = "Timers set";
+  turnBlue(p1);
+};
+buttonClear.onclick = function () {
+  clearTimeout(timer1);
+  clearTimeout(timer2);
+  clearTimeout(timer3);
+  p1.innerHTML = "Timers cleared";
+  turnBlue(p1);
+};
+      </code></pre>
+      <pre><code class="language-js">
+const buttonSet = document.getElementById("buttonSet");
+const buttonClear = document.getElementById("buttonClear");
+const p1 = document.getElementById("p1");
+let timer1, timer2, timer3;
+buttonSet.onclick = function () {
+  timer1 = setTimeout(firstMessaage, 3000); // 1000ms = 1s
+  timer2 = setTimeout(secondMessaage, 6000);
+  timer3 = setTimeout(thirdMessaage, 9000);
+  p1.innerHTML = "Timers set";
+  turnBlue(p1);
+};
+buttonClear.onclick = function () {
+  clearTimeout(timer1);
+  clearTimeout(timer2);
+  clearTimeout(timer3);
+  p1.innerHTML = "Timers cleared";
+  turnBlue(p1);
+};
+
+function firstMessaage() {
+  p2.innerHTML = `MESSAGE #1`;
+}
+function secondMessaage() {
+  p2.innerHTML += `<br>MESSAGE #2`;
+}
+function thirdMessaage() {
+  p2.innerHTML += `<br>MESSAGE #3`;
+}
+function turnBlue(element) {
+  element.style.backgroundColor = "#4191ee";
+}
+
+      </code></pre>
+    </div>
+    <script src="setTimeout().js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

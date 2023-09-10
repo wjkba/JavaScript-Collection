@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checked-property</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="checked-property.css" />
+  </head>
+  <body>
+    <main>
+      <h1>checked-property</h1>
+      <div class="checkContainer">
+        <div class="flex">
+          <label>myCheckbox: </label>
+          <input type="Checkbox" id="myCheckbox" name="myCheckbox" />
+        </div>
+      </div>
+      <pre><code class="language-js">
+let Checkbox = document.getElementById("myCheckbox");
+Checkbox.addEventListener("change", function () {
+  if (myCheckbox.checked) {
+    document.querySelector(".checkContainer").style.backgroundColor = "#7ab965";
+    document.querySelector(".checkContainer").style.color = "black";
+    console.log("Checkbox is checked..");
+  }
+  //
+  else {
+    document.querySelector(".checkContainer").style.backgroundColor = "#de5cb8";
+    document.querySelector(".checkContainer").style.color = "white";
+    console.log("Checkbox is not checked..");
+  }
+});
+      </code></pre>
+      <div class="container2">
+        <h2>Radio buttons - choose one option:</h2>
+        <p id="p1">select a payment option:</p>
+        <div class="flex2">
+          <div>
+            <label for="visaButton">Visa</label>
+            <input type="radio" name="card" id="visaButton" />
+          </div>
+          <div>
+            <label for="mastercardButton">MasterCard</label>
+            <input type="radio" name="card" id="mastercardButton" />
+          </div>
+          <div>
+            <label for="blikButton">BLIK</label>
+            <input type="radio" name="card" id="blikButton" />
+          </div>
+          <div>
+            <label for="paypalButton">Paypal</label>
+            <input type="radio" name="card" id="paypalButton" />
+          </div>
+          <p id="p2">select..</p>
+        </div>
+      </div>
+      <pre><code class="language-js">
+const visaButton = document.getElementById("visaButton");
+const mastercardButton = document.getElementById("mastercardButton");
+const blikButton = document.getElementById("blikButton");
+const paypalButton = document.getElementById("paypalButton");
+let p2 = document.getElementById("p2");
+
+visaButton.addEventListener("change", function () {
+  if (visaButton.checked) {
+    p2.innerHTML = "You have selected Visa";
+    console.log("VISA Selected");
+  }
+});
+mastercardButton.addEventListener("change", function () {
+  if (mastercardButton.checked) {
+    p2.innerHTML = "You have selected MasterCard";
+    console.log("MasterCard Selected");
+  }
+});
+
+blikButton.addEventListener("change", function () {
+  p2.innerHTML = "You have selected BLIK";
+  if (blikButton.checked) {
+    console.log("BLIK Selected");
+  }
+});
+
+paypalButton.addEventListener("change", function () {
+  p2.innerHTML = "You have selected Paypal";
+  if (paypalButton.checked) {
+    console.log("Paypal Selected");
+  }
+});
+
+      </code></pre>
+    </main>
+
+    <script src="checked-property.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

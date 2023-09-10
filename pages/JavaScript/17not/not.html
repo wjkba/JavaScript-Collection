@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>not</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="not.css" />
+  </head>
+  <body>
+    <h1>not</h1>
+    <main>
+      <div>
+        <label>Boolean value: </label>
+        <select id="selectBoolean">
+          <option value="boolTrue">True</option>
+          <option value="boolFalse">False</option>
+        </select>
+        <p id="p1">boolean is..</p>
+        <p id="p2">IS NOT value:</p>
+      </div>
+      <pre><code class="language-js">
+  var NOTbool1 = !bool1;
+  p2.innerHTML = "IS NOT value: " + NOTbool1;
+      </code></pre>
+    </main>
+    <pre><code class="language-js">
+const selectBoolean = document.getElementById("selectBoolean");
+let bool1;
+
+selectBoolean.addEventListener("change", function () {
+  var p1 = document.getElementById("p1");
+  var p2 = document.getElementById("p2");
+  selection = selectBoolean.value;
+  switch (selection) {
+    case "boolTrue":
+      p1.innerHTML = "boolean is TRUE";
+      p1.style.backgroundColor = "green";
+      p1.style.color = "white";
+      var bool1 = true;
+      break;
+    case "boolFalse":
+      p1.innerHTML = "boolean is FALSE";
+      p1.style.backgroundColor = "red";
+      p1.style.color = "white";
+      var bool1 = false;
+      break;
+  }
+  console.log(bool1);
+  console.log(typeof bool1);
+  var NOTbool1 = !bool1;
+  p2.innerHTML = "IS NOT value: " + NOTbool1;
+});
+    </code></pre>
+    <script src="not.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

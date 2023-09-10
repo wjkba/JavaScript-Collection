@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getters&setters</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="getters&setters.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>getters&setters</h1>
+        <p class="header__description">
+          Getters and setters are special methods used to access and modify
+          object properties with custom behavior.
+          <b>Getters are used to retrieve the value of a property</b>, and
+          <b>setters are used to assign a value to a property.</b> They allow
+          you to control how properties are accessed and modified, enabling data
+          validation, computations, or side effects. Getters and setters are
+          particularly useful for maintaining data integrity and encapsulation
+          in objects.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Car {
+  constructor(power, gas) {
+    this._power = power;
+    this._gas = gas;
+  }
+  //when Car.power is accessed 'get' binds it to the following function:
+  get power() {
+    return `${this._power}hp`;
+  }
+  //when Car.gas is accessed 'get' binds it to the following function:
+  get gas() {
+    return `${this._gas}L (${(this._gas / 50) * 100}% GAS)`;
+  }
+  //when Car.value is changed 'set' binds it to the following function:
+  set gas(value) {
+    if (value > 50) {
+      value = 50;
+    } else if (value < 0) {
+      value = 0;
+    }
+    this._gas = value;
+  }
+}
+
+let car1 = new Car(200, 10);
+car1.gas = 2;
+console.log(car1.power);
+console.log(car1.gas);
+
+      </code></pre>
+    </div>
+    <script src="getters&setters.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

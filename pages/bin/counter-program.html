@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter-program</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="counter-program.css" />
+  </head>
+  <body>
+    <h1>counter-program</h1>
+    <p id="p_count"></p>
+    <div class="flex">
+      <button id="button_decrease">decrease</button>
+      <button id="button_reset" type="button">reset</button>
+      <button id="button_increase" type="button">increase</button>
+    </div>
+    <pre><code class="language-js">
+let count = 0;
+document.getElementById("p_count").innerHTML = count;
+
+document.getElementById("button_decrease").onclick = function () {
+  count -= 1;
+  document.getElementById("p_count").innerHTML = count;
+  console.log(count);
+};
+document.getElementById("button_reset").onclick = function () {
+  count = 0;
+  document.getElementById("p_count").innerHTML = count;
+};
+document.getElementById("button_increase").onclick = function () {
+  count += 1;
+  document.getElementById("p_count").innerHTML = count;
+};
+
+    </code></pre>
+    <script src="counter-program.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ternary-operator</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ternary-operator.css" />
+  </head>
+  <body>
+    <h1>ternary-operator</h1>
+    <p>
+      ternary operator is a shortcut for an 'if/else statement'. 
+      <div><p>It takes 3 opperands: </p></div>
+      <div><p>1. a condition with ?</p></div>
+      <div><p>2. expression if True </p></div>
+      <div><p>3. expression if False</p></div>
+    </p>
+    <div>
+      <label>Enter your age: </label>
+      <input id="inputAge" />
+      <button type="button" id="buttonAge">Submit</button>
+    </div>
+    <div>
+          <p id="p1">+18: result</p>
+    <br>
+    </div>
+    <div>
+          <pre>condition ? doIfTrue : doIfFalse;</pre>
+    <br>
+    </div>
+    <p>simple function with ternary operator: </p>
+    <pre><code class="language-js">
+const inputAge = document.getElementById("inputAge");
+const buttonAge = document.getElementById("buttonAge");
+const p1 = document.getElementById("p1");
+
+buttonAge.onclick = function () {
+  age = inputAge.value;
+  adult = checkAge(age);
+  p1.innerHTML = "+18:  " + "<span>" + adult + "</span>";
+};
+
+function checkAge(age) {
+  return age >= 18 ? true : false;
+}
+    </code></pre>
+    <p>same function achieved using if/else statement (more code):</p>
+    <pre><code class="language-js">
+function checkAge(age) {
+  if (age >= 18) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+buttonAge.onclick = function () {
+  age = inputAge.value;
+  adult = checkAge(age);
+  console.log("+18: : " + "<span>" + adult + "</span>");
+};
+    </code></pre>
+    <script src="ternary-operator.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

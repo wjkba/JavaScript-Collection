@@ -1,0 +1,18 @@
+body {
+  padding: 2rem;
+}
+.code {
+  background-color: #343434;
+  color: #ffffff;
+  border-left: 4px solid hsl(120, 99%, 35%);
+  padding-left: 10px;
+}
+.codeJS {
+  background-color: #343434;
+  color: #ffffff;
+  border-left: 4px solid #f7df1d;
+  padding-left: 10px;
+}
+/*
+----------------------------------
+*/

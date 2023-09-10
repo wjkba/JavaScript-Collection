@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>maps</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="maps.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>maps</h1>
+        <p class="header__description">
+          The Map object holds key-value pairs and remembers the original
+          insertion order of the keys. Any value (both objects and primitive
+          values) may be used as either a key or a value.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const store = new Map([
+  ["Hat", 20],
+  ["Shirt", 50],
+  ["Jeans", 70],
+]);
+
+store.get("Shirt"); // gets the value of the shirt
+store.set("Ring", 300); // adds Ring key with value of 300 to store Map
+store.delete("Jeans"); // deletes Jeans from store Map
+store.has("Shirt"); // checks if store has Shirt, returns true
+store.has("Jeans"); // checks if store has Jeans, returns false because Jeans got deleted
+store.size; // checks the amount of pairs in store Map
+
+store.forEach((value, key) => console.log(`${key} - ${value}PLN`)); //disply store Map
+
+      </code></pre>
+    </div>
+    <script src="maps.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

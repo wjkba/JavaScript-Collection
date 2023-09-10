@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>type-conversion</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="type-conversion.css" />
+  </head>
+  <body>
+    <h1>type-conversion</h1>
+    <p>convert string input to number</p>
+    <label>Enter your age: </label>
+    <input id="input_age" maxlength="2" />
+    <button id="submit_age" type="button">submit</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <pre><code class="language-js">
+let age;
+
+document.getElementById("submit_age").onclick = function () {
+  age = document.getElementById("input_age").value;
+  document.getElementById("p1").innerHTML = "You are " + age + " years old.";
+  document.getElementById("p2").innerHTML =
+    "In 3 years you will be " + (Number(age) + 3) + " years old.";
+};
+    </code></pre>
+    <script src="type-conversion.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

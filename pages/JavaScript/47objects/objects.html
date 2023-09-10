@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objects</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="objects.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>objects</h1>
+        <p class="header__description">
+          object is a group of properties and methods
+        </p>
+        <p>properties = what an object has</p>
+        <p>methods = what an object can do</p>
+        <p>use . to access propertie/methods</p>
+      </div>
+      <div class="content">
+        <p id="p1">empty</p>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+// Objects
+const car = {
+  model: "Fiat",
+  color: "red",
+  year: 1973,
+
+  drive: function () {
+    console.log("You drive the car");
+  },
+  break: function () {
+    console.log("You step on the brakes");
+  },
+};
+
+//Access properties of an object
+car.model; // Fiat
+car.color; // red
+car.year; // 1973
+
+//Invoke methods within car object
+car.drive();
+car.break();
+
+      </code></pre>
+    </div>
+    <script src="objects.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addChangeCSS</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="addChangeCSS.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>add/change CSS</h1>
+        <p class="header__description"></p>
+      </div>
+      <div class="content">
+        <div id="box1">box</div>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const box = document.getElementById("box1");
+box.style.padding = "2rem";
+box.style.margin = "4rem";
+box.style.backgroundColor = "#51b752";
+box.style.color = "whitesmoke";
+box.style.textAlign = "center";
+box.style.fontSize = "3rem";
+box.style.border = "0.5rem solid #dc4a68";
+      </code></pre>
+    </div>
+    <script src="addChangeCSS.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

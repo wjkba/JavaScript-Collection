@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for-loops</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="for-loops.css" />
+  </head>
+  <body>
+    <h1>for-loops</h1>
+    <button class="button" id="buttonLoop1">start for-loop</button>
+    <button class="button" id="buttonLoop2">start for-loop2</button>
+    <p id="p1"></p>
+    <div>
+      <img src="images/code.png" />
+    </div>
+    <pre><code class="language-js">
+// for loop = repeat some code
+//            certain amount of times
+
+// for (let counter = 1; counter <= 10; counter += 1) {
+//   console.log(counter);
+// }
+
+const buttonLoop1 = document.getElementById("buttonLoop1");
+const buttonLoop2 = document.getElementById("buttonLoop2");
+
+buttonLoop1.onclick = () => {
+  for (let i = 0; i <= 100; i += 5) {
+    console.log(i);
+  }
+};
+
+buttonLoop2.onclick = () => {
+  console.log("ODLICZANIE DO NOWEGO ROKU ");
+  for (let i = 10; i >= 0; i -= 1) {
+    console.log(i);
+    if (i == 0) {
+      console.log("HAPPY NEW YEAR!!!");
+    }
+  }
+};
+
+    </code></pre>
+    <script src="for-loops.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

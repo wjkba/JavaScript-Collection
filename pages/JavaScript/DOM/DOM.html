@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="DOM.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>DOM</h1>
+        <a href="#DOM">DOM</a><br />
+        <a href="#DOMtraversal">DOM traversal</a>
+      </div>
+      <div class="content">
+        <section id="DOM">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/1200px-DOM-model.svg.png"
+          />
+
+          <p><b>select element by id:</b></p>
+          <pre><code class="language-js">document.getElementById("bigText");</code></pre>
+          <h3 id="bigText">bigText</h3>
+
+          <p><b>select element by name:</b></p>
+          <pre><code class="language-js">document.getElementsByName("radios");</code></pre>
+
+          <div>
+            <input
+              type="radio"
+              name="radios"
+              value="option1"
+              checked="checked"
+            />
+            <label for="option1">option1</label><br />
+            <input type="radio" name="radios" value="option2" />
+            <label for="option2">option2</label><br />
+            <input type="radio" name="radios" value="option3" />
+            <label for="option3">option3</label><br />
+          </div>
+
+          <p><b>select element by tag name:</b></p>
+          <pre><code class="language-js">document.getElementsByTagName("li");</code></pre>
+
+          <div>
+            <ul>
+              <li>list item#1</li>
+              <li>list item#2</li>
+              <li>list item#3</li>
+            </ul>
+          </div>
+
+          <p><b>select element by class name:</b></p>
+          <pre><code class="language-js">document.getElementsByClassName("newClass");</code></pre>
+          <div>
+            <div class="newClass">item1</div>
+            <div class="newClass">item2</div>
+            <div class="newClass">item3</div>
+          </div>
+          <p><b>select elements by querySelector:</b></p>
+          <pre><code class="language-js">
+let elements = document.querySelectorAll(".newClass");
+elements.forEach((element) => {
+  element.style.backgroundColor = "lightblue";
+});
+        </code></pre>
+        </section>
+        <section id="DOMtraversal">
+          <br />
+          <h1>DOM traversal</h1>
+          <div class="Lists">
+            <ul id="List1">
+              <li>hat</li>
+              <li>tshirt</li>
+              <li>jeans</li>
+            </ul>
+            <ul id="List2">
+              <li>ring</li>
+              <li>necklace</li>
+              <li>earrings</li>
+            </ul>
+            <ul id="List3">
+              <li>jacket</li>
+              <li>coat</li>
+              <li>cape</li>
+            </ul>
+          </div>
+          <pre><code class="language-js">
+let Lists = document.querySelector(".Lists");
+let List1 = document.querySelector("#List1");
+Lists.firstElementChild.style.backgroundColor = "lightblue";
+Lists.firstElementChild.nextElementSibling.style.backgroundColor = "#FFB3CB";
+Lists.lastElementChild.style.backgroundColor = "lightgreen";
+List1.children[2].style.color = "red";
+
+let children = Array.from(Lists.children);
+children.forEach((child) => {
+  child.style.color = "#591D30";
+});
+          </code></pre>
+          <div id="domt">
+            <p>.firstElementChild</p>
+            <p>.lastElementChild</p>
+            <p>.parentElement</p>
+            <p>.nextElementSibling</p>
+            <p>.previousElementSibling</p>
+            <p>.children[]</p>
+            <p>Array.from(.children)</p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div id="code"></div>
+    <script src="DOM.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

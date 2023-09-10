@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ppk-calc</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ppk-calc.css" />
+  </head>
+  <body>
+    <header>
+      <h1>kalkulator przeciwprostokątnej</h1>
+    </header>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Triangle_Sides_ABC.svg/200px-Triangle_Sides_ABC.svg.png"
+    />
+    <main>
+      <div class="flex">
+        <div class="flex0">
+          <input placeholder="a" id="input_a" />
+          <input placeholder="b" id="input_b" />
+          <button id="button_calc" type="button">calculate</button>
+        </div>
+        <div>
+          <p id="p_result"></p>
+        </div>
+      </div>
+      <pre><code class="language-js">
+let a;
+let b;
+let c;
+
+document.getElementById("button_calc").onclick = function () {
+  a = document.getElementById("input_a").value;
+  b = document.getElementById("input_b").value;
+  a = Number(a);
+  b = Number(b);
+  c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+  document.getElementById("p_result").innerHTML = "c = " + c;
+  console.log(a, b);
+  console.log(c);
+  console.log(typeof a, typeof b);
+};
+
+      </code></pre>
+    </main>
+    <script src="ppk-calc.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body {
+  padding: 2rem;
+}
+.container1 {
+  margin-bottom: 4rem;
+}
+.container1 p {
+  font-family: monospace;
+  margin: 0;
+}
+pre {
+  width: fit-content;
+}
+#p_name {
+  font-size: 36px;
+  letter-spacing: 0.045em;
+}
+#p_num {
+  font-size: 18px;
+  margin-left: 6.5px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+h2 {
+  font-family: monospace;
+  font-weight: 700;
+}
+#h22 {
+  margin-top: 4rem;
+}
+#span1,
+#span2,
+#span3,
+#span4,
+#span5 {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+#code {
+  margin-top: 6rem;
+}

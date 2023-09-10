@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>super</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="super.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>super</h1>
+        <p class="header__description">
+          super keyword is used within a subclass to call the constructor or
+          methods of its parent class. It's a way to access and invoke
+          functionalities defined in the parent class while extending or
+          customizing them in the child class. super helps maintain inheritance
+          and allows you to reuse code from the parent class in the child class,
+          promoting code reusability in object-oriented programming.
+        </p>
+      </div>
+      <div class="content"></div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    super(name, age); // refers to the parent class Animal
+    this.runSpeed = runSpeed;
+  }
+}
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    super(name, age); // refers to the parent class Animal
+    this.swimSpeed = swimSpeed;
+  }
+}
+class Bird extends Animal {
+  constructor(name, age, flySpeed) {
+    super(name, age); // refers to the parent class Animal
+    this.flySpeed = flySpeed;
+  }
+}
+
+//
+const bird = new Bird("Steve", 2, 120);
+console.log(bird.name);
+console.log(bird.age);
+console.log(bird.flySpeed);
+
+      </code></pre>
+    </div>
+    <script src="super.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

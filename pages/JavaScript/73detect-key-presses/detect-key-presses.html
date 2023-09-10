@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>detect-key-presses</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="detect-key-presses.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>detect-key-presses</h1>
+        <p class="header__description"></p>
+        <p>controls: wsad</p>
+        <p id="p1">key pressed:</p>
+      </div>
+      <div class="content">
+        <div id="myDiv">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Runner_stickman.png/700px-Runner_stickman.png"
+          />
+        </div>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+const p1 = document.getElementById("p1");
+const myDiv = document.getElementById("myDiv");
+window.addEventListener("keydown", move);
+
+let x = 0;
+let y = 0;
+
+function move(event) {
+  console.log(event.key);
+  p1.textContent = `key pressed: ${event.key}`;
+  switch (event.key) {
+    case "w":
+      y -= 15;
+      myDiv.style.top = y + "px";
+      break;
+    case "s":
+      y += 15;
+      myDiv.style.top = y + "px";
+      break;
+    case "d":
+      x -= 15;
+      myDiv.style.right = x + "px";
+      break;
+    case "a":
+      x += 15;
+      myDiv.style.right = x + "px";
+      break;
+    default:
+      break;
+  }
+}
+
+      </code></pre>
+    </div>
+    <script src="detect-key-presses.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

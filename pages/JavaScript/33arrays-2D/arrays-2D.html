@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays-2D</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="arrays-2D.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>arrays-2D</h1>
+        <p class="header__description">
+          2D array is an array of arrays, effectively creating a grid-like
+          structure. Each element in the main array holds another array (row),
+          forming rows and columns. This arrangement allows for representing
+          tabular or grid-based data. Accessing elements in a 2D array involves
+          specifying both the row and column indices. They provide a way to
+          organize and manipulate structured data in a two-dimensional format
+          within a single variable.
+        </p>
+      </div>
+      <div class="content">
+        <p>replace item by choosing row, column and item name</p>
+        <div class="container-input">
+          <!-- test code -->
+          <span style="color: #4be3c0">groceryList</span
+          ><span style="color: #d66fd3">[</span
+          ><input placeholder="row" id="inputX" /><span style="color: #d66fd3"
+            >]</span
+          ><span style="color: #d66fd3">[</span
+          ><input id="inputY" placeholder="column" /><span
+            style="color: #d66fd3"
+            >]</span
+          ><span> = </span> <span style="color: #93db71">"</span
+          ><input id="inputItem" placeholder="item" /><span
+            style="color: #93db71"
+            >"</span
+          >
+        </div>
+        <button id="buttonItems">display all items</button>
+      </div>
+    </main>
+    <div id="code">
+      <pre><code class="language-js">
+let fruits =     ["apple", "orange", "banana", "mango", "lemon"];
+let vegetables = ["tomato", "potato", "onion"];
+let meats =      ["chicken", "beef", "pork", "fish"];
+
+let groceryList = [fruits, vegetables, meats];
+
+for (let list of groceryList) {
+  for (let food of list) {
+    console.log(food);
+  }
+}
+      </code></pre>
+    </div>
+    <script src="arrays-2D.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>

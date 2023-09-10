@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rest-parameters</title>
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="rest-parameters.css" />
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>rest-parameters</h1>
+Rest parameters in JavaScript are denoted by using the ... syntax before a function parameter. They allow a function to accept an arbitrary number of arguments as an array. Rest parameters collect all the remaining arguments passed to a function that aren't explicitly defined as separate parameters. This is particularly useful when you want to work with a variable number of arguments without having to define each one individually. The rest parameter aggregates the extra arguments into an array, making it easier to handle dynamic function inputs.</p>
+      </div>
+      <div class="content">
+        <hr>
+      </div>
+    </main>
+    <div id="code">
+      <p>the sum function is designed to take any number of arguments, add them together, and return the sum. This is achieved by using the rest parameter to collect the input numbers as an array, then iterating through the array and accumulating their values to calculate the total sum.</p>
+      <pre><code class="language-js">
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+let e = 5;
+
+console.log(sum(a, b, c, d, e));
+
+function sum(...numbers) {
+  let total = 0;
+  for (let number of numbers) {
+    total += number;
+  }
+  return total;
+}
+      </code></pre>
+    </div>
+    <script src="rest-parameters.js"></script>
+    <script src="prism/prism.js"></script>
+  </body>
+</html>
