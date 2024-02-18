@@ -1,4 +1,4 @@
 # JavaScript Collection
-a collection of useful resources, concepts I found important, helpful during my learning journey
+a collection of concepts I found important or helpful during my javascript learning journey
 
 ![preview](/preview.png)
