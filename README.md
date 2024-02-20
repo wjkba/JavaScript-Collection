@@ -1,4 +1,4 @@
-# JavaScript Collection
+# 🟨 JavaScript Collection
 I've gathered here a select collection of JavaScript concepts that I've found crucial and helpful during my learning journey. Each concept is explained with code snippets and live previews to aid in understanding and practical application.
 
 https://wjkba.github.io/JavaScript-Collection/
