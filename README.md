@@ -18,3 +18,7 @@ This repository is a reflection of my journey, showcasing the concepts that I be
 ### 
 
 ![preview](/preview.png)
+
+Check out my html and css basics:
+ - 🟠 [HTML](https://github.com/wjkba/HTML5-basics)
+ - 🔵 [CSS](https://github.com/wjkba/CSS3-basics)
